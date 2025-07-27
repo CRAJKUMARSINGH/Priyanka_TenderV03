@@ -12,6 +12,7 @@ def create_header():
         border-radius: 12px; 
         margin-bottom: 30px;
         box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        position: relative;
     ">
         <h1 style="
             color: white; 
@@ -28,20 +29,10 @@ def create_header():
             font-size: 1.3em;
             font-weight: 500;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            font-style: italic;
         ">
-            PWD Electric Division - Government Engineering Office
+            An Initiative by Mrs. Premlata Jain, Additional Administrative Officer, PWD, Udaipur
         </p>
-        <div style="
-            margin-top: 15px;
-            padding: 8px 16px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            display: inline-block;
-        ">
-            <span style="color: #ffffff; font-size: 0.9em; font-weight: 500;">
-                🔐 Secure • 📊 Efficient • 🎯 Accurate • 🌐 Modern • 📅 Enhanced Date Handling
-            </span>
-        </div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -82,17 +73,18 @@ def create_footer():
             border-radius: 12px; 
             border-left: 4px solid #1f77b4;
             box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
         ">
-            <h4 style="color: white; margin-bottom: 15px; font-weight: 700;">📋 System Information</h4>
             <p style="
                 color: #f8f9fa; 
-                line-height: 1.8;
                 margin: 0;
-                font-size: 1.05em;
-                font-weight: 600;
+                font-size: 1.3em;
+                font-weight: 700;
+                line-height: 1.4;
             ">
-                Professional Tender Processing System<br>
-                Enhanced Date Handling & Document Generation<br>
                 PWD Electric Division - Udaipur
             </p>
         </div>
@@ -129,13 +121,13 @@ def create_footer():
         border-radius: 8px;
     ">
         <p style="margin: 5px 0; font-weight: 600;">
-            © 2024 PWD Electric Division Tender Processing System | Designed for Government Engineering Offices
+            2024 PWD Electric Division Tender Processing System | Designed for Government Engineering Offices
         </p>
         <p style="margin: 10px 0; font-weight: 500;">
-            🔒 Secure • 📊 Efficient • 🎯 Accurate • 🌐 Modern • 📅 Multi-Format Date Support • 📈 Enhanced Reporting
+            Secure • Efficient • Accurate • Modern • Multi-Format Date Support • Enhanced Reporting
         </p>
         <p style="margin: 5px 0; font-size: 0.8em; color: #868e96;">
-            Built with ❤️ for engineers, by engineers | Powered by Streamlit & Python | Date Bugs Fixed ✅
+            Built with for engineers, by engineers | Powered by Streamlit & Python | Date Bugs Fixed 
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -162,7 +154,7 @@ def show_balloons():
             font-weight: 700;
             font-size: 1.8em;
         ">
-            🎉 Congratulations! 🎉
+            Congratulations! 
         </h3>
         <p style="
             color: white; 
@@ -178,7 +170,7 @@ def show_balloons():
             font-size: 0.9em;
             opacity: 0.9;
         ">
-            <span style="color: white;">✨ Professional • 🎯 Accurate • ⚡ Fast • 📅 Date-Safe</span>
+            <span style="color: white;"> Professional • Accurate • Fast • Date-Safe</span>
         </div>
     </div>
     
@@ -483,7 +475,7 @@ def show_date_parsing_status(original_date: str, parsed_date: datetime = None, f
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         ">
             <p style="margin: 0; color: #155724; font-weight: 600;">
-                ✅ Date Successfully Parsed & Validated
+                Date Successfully Parsed & Validated
             </p>
             <div style="
                 margin-top: 8px; 
@@ -515,7 +507,7 @@ def show_date_parsing_status(original_date: str, parsed_date: datetime = None, f
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         ">
             <p style="margin: 0; color: #721c24; font-weight: 600;">
-                ❌ Date Parsing Failed
+                Date Parsing Failed
             </p>
             <div style="
                 margin-top: 8px; 
@@ -566,15 +558,15 @@ def show_system_info():
             margin: 0 0 15px 0;
             font-weight: 700;
         ">
-            🔧 System Information
+            System Information
         </h4>
         
         <div style="color: #1565c0; line-height: 1.6;">
-            <p><strong>📅 Date Utils Version:</strong> Enhanced Multi-Format Support</p>
-            <p><strong>🔄 Supported Date Formats:</strong> {len(date_utils.SUPPORTED_FORMATS)} formats</p>
-            <p><strong>📤 Output Format:</strong> {date_utils.OUTPUT_FORMAT}</p>
-            <p><strong>🖥️ Display Format:</strong> {date_utils.DISPLAY_FORMAT}</p>
-            <p><strong>⏰ Current System Date:</strong> {date_utils.get_current_date()}</p>
+            <p><strong>Date Utils Version:</strong> Enhanced Multi-Format Support</p>
+            <p><strong>Supported Date Formats:</strong> {len(date_utils.SUPPORTED_FORMATS)} formats</p>
+            <p><strong>Output Format:</strong> {date_utils.OUTPUT_FORMAT}</p>
+            <p><strong>Display Format:</strong> {date_utils.DISPLAY_FORMAT}</p>
+            <p><strong>Current System Date:</strong> {date_utils.get_current_date()}</p>
         </div>
         
         <div style="
