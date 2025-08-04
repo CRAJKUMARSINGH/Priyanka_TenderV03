@@ -2,12 +2,12 @@
   "Arun Electricals": {
     "name": "Arun Electricals",
     "address": "fatehpuria Bazar, Pali",
-    "last_used": "27/07/2025"
+    "last_used": "03/08/2025"
   },
   "Ashapura Electric": {
     "name": "Ashapura Electric",
     "address": "UDAIPUR",
-    "last_used": "27/07/2025"
+    "last_used": "04/08/2025"
   },
   "Bhawani air systems": {
     "name": "Bhawani air systems",
@@ -17,17 +17,17 @@
   "Bitu Prabhat Electrical": {
     "name": "Bitu Prabhat Electrical",
     "address": "Jaipur",
-    "last_used": "22/07/2025"
+    "last_used": "03/08/2025"
   },
   "Bright Home": {
     "name": "Bright Home",
     "address": "Udaipur",
-    "last_used": "27/07/2025"
+    "last_used": "03/08/2025"
   },
   "Friends Enterprises": {
     "name": "Friends Enterprises",
     "address": "452 Moksh Marg Shastri Circle Udaipur",
-    "last_used": "27/07/2025"
+    "last_used": "03/08/2025"
   },
   "GANPATI COMMUNICATION SERVICES": {
     "name": "GANPATI COMMUNICATION SERVICES",
@@ -182,7 +182,7 @@
   "Taniya Electricals": {
     "name": "Taniya Electricals",
     "address": "Dausa",
-    "last_used": "2024-01-01"
+    "last_used": "04/08/2025"
   },
   "Techno Industries Pvt Ltd": {
     "name": "Techno Industries Pvt Ltd",
@@ -212,11 +212,23 @@
   "VK Enterprises": {
     "name": "VK Enterprises",
     "address": "Udaipur",
-    "last_used": "2024-01-01"
+    "last_used": "03/08/2025"
   },
   "Yash Electricals": {
     "name": "Yash Electricals",
     "address": "Udaipur",
     "last_used": "2025-07-19"
+  },
+  "kachru lal": {
+    "address": "dd",
+    "date_added": "04/08/2025",
+    "last_used": "04/08/2025",
+    "total_tenders": 1
+  },
+  "sohan singh kalugamda": {
+    "address": "dd",
+    "date_added": "04/08/2025",
+    "last_used": "04/08/2025",
+    "total_tenders": 1
   }
 }

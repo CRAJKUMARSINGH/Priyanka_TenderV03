@@ -1,0 +1,57 @@
+# document_generator.py  (REVISED – all PDF methods accept 5 args)
+from docx import Document
+from docx.shared import Inches, Pt
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.enum.table import WD_TABLE_ALIGNMENT
+from docx.oxml.shared import OxmlElement, qn
+from datetime import datetime
+from typing import Dict, Any, List
+import io
+import logging
+from date_utils import DateUtils
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+class DocumentGenerator:
+    """Generates Word documents for tender processing system."""
+    
+    def __init__(self):
+        self.date_utils = DateUtils()
+
+    # ----------  ALL PDF METHODS NOW TAKE 5 ARGS  ----------
+    def generate_letter_acceptance_pdf(self, a, b, c, d, e=None):
+        return self.generate_letter_of_acceptance_doc(a, b, c)
+
+    def generate_work_order_pdf(self, a, b, c, d, e=None):
+        return self.generate_work_order_doc(a, b, c)
+
+    def generate_scrutiny_sheet_pdf(self, a, b, c, d, e=None):
+        return self.generate_scrutiny_sheet_doc(a, b, c)
+
+    # -------------------------------------------------------
+
+    # ====  Word helpers (unchanged)  ====
+    def set_table_borders(self, table):
+        tbl = table._tbl
+        tblBorders = OxmlElement('w:tblBorders')
+        for border_name in ['top', 'left', 'bottom', 'right', 'insideH', 'insideV']:
+            border = OxmlElement(f'w:{border_name}')
+            border.set(qn('w:val'), 'single')
+            border.set(qn('w:sz'), '12')
+            border.set(qn('w:space'), '0')
+            border.set(qn('w:color'), '000000')
+            tblBorders.append(border)
+        tbl.tblPr.append(tblBorders)
+
+    # ====  All Word generators below are untouched  ====
+    def generate_comparative_statement_doc(self, work: Dict[str, Any], bidders: List[Dict[str, Any]]) -> bytes:
+        ...  # (keep existing code)
+
+    def generate_scrutiny_sheet_doc(self, work: Dict[str, Any], bidders: List[Dict[str, Any]]) -> bytes:
+        ...  # (keep existing code)
+
+    def generate_letter_of_acceptance_doc(self, work: Dict[str, Any], bidders: List[Dict[str, Any]]) -> bytes:
+        ...  # (keep existing code)
+
+    def generate_work_order_doc(self, work: Dict[str, Any], bidders: List[Dict[str, Any]]) -> bytes:
+        ...  # (keep existing code)

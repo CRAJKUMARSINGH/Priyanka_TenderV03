@@ -756,7 +756,7 @@ def handle_document_generation():
                     # Letter of Acceptance
                     l1_bidder = min(st.session_state.bidders, key=lambda x: x.get('bid_amount', float('inf')))
                     loa_path = os.path.join(temp_dir, "letter_acceptance.pdf")
-                    if latex_gen.generate_letter_acceptance_pdf(st.session_state.current_work, l1_bidder, loa_path):
+                    if latex_gen.generate_letter_of_acceptance_pdf(st.session_state.current_work, l1_bidder, loa_path):
                         with open(loa_path, 'rb') as f:
                             documents['letter_acceptance'] = f.read()
                     
@@ -821,7 +821,7 @@ def handle_document_generation():
                             l1_bidder = min(st.session_state.bidders, key=lambda x: x.get('bid_amount', float('inf')))
                             
                             loa_path = os.path.join(temp_dir, "letter_acceptance.pdf")
-                            if latex_gen.generate_letter_acceptance_pdf(st.session_state.current_work, l1_bidder, loa_path):
+                            if latex_gen.generate_letter_of_acceptance_pdf(st.session_state.current_work, l1_bidder, loa_path):
                                 with open(loa_path, 'rb') as f:
                                     documents['letter_acceptance'] = f.read()
                             
