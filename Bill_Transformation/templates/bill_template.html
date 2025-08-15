@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Contractor Bill Template</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 10mm;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 10pt;
+            margin: 0;
+            padding: 0;
+            background: white;
+        }
+
+        .excel-sheet {
+            width: 100%;
+            background: white;
+        }
+
+        .government-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            font-size: 10pt;
+            table-layout: fixed;
+            border: 1px solid #000;
+        }
+
+        .government-table th,
+        .government-table td {
+            border: 1px solid #000;
+            padding: 2px 4px;
+            text-align: left;
+            vertical-align: middle;
+            height: 18px;
+            overflow: hidden;
+            word-wrap: break-word;
+        }
+
+        .government-table th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            text-align: center;
+            font-size: 9pt;
+        }
+
+        .government-table td {
+            font-size: 9pt;
+        }
+
+        /* Exact column widths as per first_page specification */
+        .government-table th:nth-child(1),
+        .government-table td:nth-child(1) {
+            width: 11.1mm;
+            text-align: center;
+        }
+
+        .government-table th:nth-child(2),
+        .government-table td:nth-child(2) {
+            width: 74.2mm;
+            text-align: left;
+        }
+
+        .government-table th:nth-child(3),
+        .government-table td:nth-child(3) {
+            width: 11.7mm;
+            text-align: center;
+        }
+
+        .government-table th:nth-child(4),
+        .government-table td:nth-child(4) {
+            width: 16mm;
+            text-align: right;
+        }
+
+        .government-table th:nth-child(5),
+        .government-table td:nth-child(5) {
+            width: 16mm;
+            text-align: right;
+        }
+
+        .government-table th:nth-child(6),
+        .government-table td:nth-child(6) {
+            width: 15.3mm;
+            text-align: right;
+        }
+
+        .government-table th:nth-child(7),
+        .government-table td:nth-child(7) {
+            width: 22.7mm;
+            text-align: right;
+        }
+
+        .government-table th:nth-child(8),
+        .government-table td:nth-child(8) {
+            width: 17.6mm;
+            text-align: right;
+        }
+
+        .government-table th:nth-child(9),
+        .government-table td:nth-child(9) {
+            width: 13.9mm;
+            text-align: center;
+        }
+
+        @media print {
+            .government-table {
+                border-collapse: collapse !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .government-table th,
+            .government-table td {
+                border: 1px solid #000 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="excel-sheet template-bill">
+        <table class="government-table">
+            <thead>
+                <tr>
+                    <th>Item No.</th>
+                    <th>Item of Work supplies (Grouped under "sub-head" and "sub work" of estimate)</th>
+                    <th>Unit</th>
+                    <th>Quantity executed (or supplied) since last certificate</th>
+                    <th>Quantity executed (or supplied) upto date as per MB</th>
+                    <th>Rate</th>
+                    <th>Amount upto date</th>
+                    <th>Amount Since previous bill (Total for each sub-head)</th>
+                    <th>Remark</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ item.description | default('Item Description', true) }}</td>
+                    <td>{{ item.unit | default('Unit', true) }}</td>
+                    <td>{{ item.quantity | default('0.00', true) }}</td>
+                    <td>{{ item.quantity_to_date | default(item.quantity, true) | default('0.00', true) }}</td>
+                    <td>{{ item.rate | default('0.00', true) }}</td>
+                    <td>{{ item.amount_to_date | default(item.amount, true) | default('0.00', true) }}</td>
+                    <td>{{ item.amount | default('0.00', true) }}</td>
+                    <td>{{ item.remark | default('', true) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate of Measurement - II</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 10pt;
+            margin: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .header h1, .header h2 {
+            margin: 5px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 9pt;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 3px 5px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            text-align: center;
+        }
+        .text-right {
+            text-align: right;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-bold {
+            font-weight: bold;
+        }
+        .signature {
+            margin-top: 20px;
+        }
+        .signature-line {
+            border-top: 1px solid #000;
+            width: 200px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>GOVERNMENT OF RAJASTHAN</h2>
+        <h2>PUBLIC WORKS DEPARTMENT</h2>
+        <h2>CERTIFICATE OF MEASUREMENT - II</h2>
+    </div>
+
+    <table>
+        <tr>
+            <td width="25%">Name of Work</td>
+            <td width="75%">{{ data.name_of_work or '_________________' }}</td>
+        </tr>
+        <tr>
+            <td>Name of Contractor</td>
+            <td>{{ data.contractor_name or '_________________' }}</td>
+        </tr>
+        <tr>
+            <td>Agreement No. & Date</td>
+            <td>{{ data.agreement_no }} Dated: {{ data.agreement_date or '_________________' }}</td>
+        </tr>
+        <tr>
+            <td>Period of Completion</td>
+            <td>From {{ data.date_commencement or '_________________' }} to {{ data.date_completion or '_________________' }}</td>
+        </tr>
+    </table>
+
+    <p>I certify that the work mentioned below has been executed as per the terms of the agreement and the measurements have been recorded in the Measurement Book No. {{ data.measurement_book_no or '_________________' }}.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th width="5%">S.No.</th>
+                <th width="45%">Description of Work</th>
+                <th width="10%">Unit</th>
+                <th width="15%">Quantity</th>
+                <th width="15%">Rate (Rs.)</th>
+                <th width="15%">Amount (Rs.)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data.items %}
+            <tr>
+                <td class="text-center">{{ loop.index }}</td>
+                <td>{{ item.description or '' }}</td>
+                <td class="text-center">{{ item.unit or '' }}</td>
+                <td class="text-right">{{ "{:,.3f}".format(item.quantity|float) if item.quantity else '0.000' }}</td>
+                <td class="text-right">{{ "{:,.2f}".format(item.rate|float) if item.rate else '0.00' }}</td>
+                <td class="text-right">{{ "{:,.2f}".format(item.amount|float) if item.amount else '0.00' }}</td>
+            </tr>
+            {% endfor %}
+            <tr class="text-bold">
+                <td colspan="5" class="text-right">Total (Rs.)</td>
+                <td class="text-right">{{ "{:,.2f}".format(data.totals.gross_amount|float) if data.totals.gross_amount else '0.00' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="signature">
+        <div>Certified that the above measurements are correct and the work has been executed as per the specifications.</div>
+        
+        <div style="margin-top: 30px;">
+            <div style="float: left; width: 33%;">
+                <div class="signature-line"></div>
+                <div>Junior Engineer</div>
+                <div>Name: {{ data.je_name or '_________________' }}</div>
+                <div>Date: ___________________</div>
+            </div>
+            
+            <div style="float: left; width: 33%; text-align: center;">
+                <div class="signature-line" style="margin: 0 auto;"></div>
+                <div>Assistant Engineer</div>
+                <div>Name: {{ data.ae_name or '_________________' }}</div>
+                <div>Date: ___________________</div>
+            </div>
+            
+            <div style="float: right; width: 33%; text-align: right;">
+                <div class="signature-line" style="margin-left: auto;"></div>
+                <div>Executive Engineer</div>
+                <div>PWD (Electrical Division)</div>
+                <div>Name: {{ data.ee_name or '_________________' }}</div>
+                <div>Date: ___________________</div>
+            </div>
+            
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+    
+    <div style="margin-top: 20px; font-size: 8pt; text-align: justify;">
+        <p><strong>Note:</strong> This certificate is issued subject to the condition that the contractor shall not be entitled to any payment on the basis of this certificate if the work is found to be defective or not in accordance with the specifications during the defect liability period.</p>
+    </div>
+</body>
+</html>

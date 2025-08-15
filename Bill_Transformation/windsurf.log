@@ -1,0 +1,10 @@
+2025-08-14 23:07:04,900 - __main__ - INFO - Windsurf application initialized
+2025-08-14 23:07:04,900 - __main__ - INFO - Processing bill from input.xlsx
+2025-08-14 23:07:04,900 - __main__ - INFO - Bill processing completed. Output saved to output
+2025-08-14 23:07:04,976 - __main__ - WARNING - Template not found: \path\to\templates\first_page.html
+2025-08-14 23:07:04,976 - __main__ - WARNING - Template not found: \path\to\templates\deviation_statement.html
+2025-08-14 23:07:04,977 - __main__ - WARNING - Template not found: \path\to\templates\extra_items.html
+2025-08-14 23:07:04,977 - __main__ - WARNING - Template not found: \path\to\templates\note_sheet.html
+2025-08-14 23:07:04,977 - __main__ - INFO - Windsurf application initialized
+2025-08-14 23:07:04,978 - __main__ - INFO - Processing bill from input.xlsx
+2025-08-14 23:07:04,978 - __main__ - INFO - Bill processing completed. Output saved to output

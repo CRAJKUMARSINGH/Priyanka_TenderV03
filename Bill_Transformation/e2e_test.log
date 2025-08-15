@@ -1,0 +1,1128 @@
+2025-08-15 08:08:07,675 - INFO - ==================================================
+2025-08-15 08:08:07,675 - INFO - STARTING END-TO-END TEST
+2025-08-15 08:08:07,675 - INFO - ==================================================
+2025-08-15 08:08:07,675 - INFO - Setting up test environment...
+2025-08-15 08:08:07,679 - INFO - Found 10 test files
+2025-08-15 08:08:07,679 - INFO - Starting batch processing...
+2025-08-15 08:08:07,680 - INFO - Starting batch processing of 10 files
+2025-08-15 08:08:07,680 - INFO - Output directory: C:\Users\Rajkumar\Bill_Transformation\test_output
+2025-08-15 08:08:07,680 - INFO - Processing file: test_files\3rdFinalNoExtra.xlsx
+2025-08-15 08:08:07,680 - INFO - Processing file: test_files\3rdFinalVidExtra.xlsx
+2025-08-15 08:08:07,682 - INFO - Processing file: test_files\3rdRunningNoExtra.xlsx
+2025-08-15 08:08:07,682 - INFO - Processing file: test_files\3rdRunningVidExtra.xlsx
+2025-08-15 08:08:07,764 - INFO - Processing sheet: Title
+2025-08-15 08:08:07,776 - INFO - Processing sheet: Title
+2025-08-15 08:08:07,777 - INFO - Processing sheet: Title
+2025-08-15 08:08:07,785 - INFO - Processing sheet: Title
+2025-08-15 08:08:07,789 - INFO - Processing sheet: Work Order
+2025-08-15 08:08:07,791 - INFO - Processing sheet: Work Order
+2025-08-15 08:08:07,795 - INFO - Processing sheet: Work Order
+2025-08-15 08:08:07,800 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:08:07,803 - INFO - Processing sheet: Work Order
+2025-08-15 08:08:07,808 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:08:07,813 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:08:07,820 - INFO - Processing sheet: Extra Items
+2025-08-15 08:08:07,826 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:08:07,833 - INFO - Processing sheet: Extra Items
+2025-08-15 08:08:07,847 - INFO - Processing sheet: Extra Items
+2025-08-15 08:08:07,854 - INFO - Processing sheet: Extra Items
+2025-08-15 08:08:08,124 - ERROR - Error processing test_files\3rdRunningVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,124 - ERROR - Error processing test_files\3rdFinalVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,124 - ERROR - Error processing test_files\3rdFinalNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,124 - ERROR - Error processing test_files\3rdRunningNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,124 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:08:08,124 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:08:08,125 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:08:08,126 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:08:08,126 - ERROR - Failed: test_files\3rdRunningVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,126 - INFO - Processing file: test_files\FirstFINALnoExtra.xlsx
+2025-08-15 08:08:08,126 - INFO - Processing file: test_files\FirstFINALvidExtra.xlsx
+2025-08-15 08:08:08,126 - INFO - Processing file: test_files\new_t01plus.xlsx
+2025-08-15 08:08:08,127 - ERROR - Failed: test_files\3rdFinalVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,128 - ERROR - Failed: test_files\3rdFinalNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,127 - INFO - Processing file: test_files\new_t01plusFINAL.xlsx
+2025-08-15 08:08:08,128 - ERROR - Failed: test_files\3rdRunningNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,201 - INFO - Processing sheet: Title
+2025-08-15 08:08:08,206 - INFO - Processing sheet: Work Order
+2025-08-15 08:08:08,215 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:08:08,224 - INFO - Processing sheet: Extra Items
+2025-08-15 08:08:08,230 - INFO - Processing sheet: Title
+2025-08-15 08:08:08,239 - ERROR - Error processing test_files\FirstFINALnoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,242 - INFO - Processing sheet: Work Order
+2025-08-15 08:08:08,246 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:08:08,251 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:08:08,252 - INFO - Processing file: test_files\new_t01plusFirst_FINAL.xlsx
+2025-08-15 08:08:08,252 - ERROR - Failed: test_files\FirstFINALnoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,260 - INFO - Processing sheet: Extra Items
+2025-08-15 08:08:08,269 - INFO - Processing sheet: Title
+2025-08-15 08:08:08,281 - INFO - Processing sheet: Title
+2025-08-15 08:08:08,285 - INFO - Processing sheet: Work Order
+2025-08-15 08:08:08,285 - ERROR - Error processing test_files\FirstFINALvidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,288 - INFO - Processing sheet: Work Order
+2025-08-15 08:08:08,295 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:08:08,299 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:08:08,299 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:08:08,308 - INFO - Processing sheet: Extra Items
+2025-08-15 08:08:08,318 - INFO - Processing sheet: Extra Items
+2025-08-15 08:08:08,318 - ERROR - Failed: test_files\FirstFINALvidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,318 - INFO - Processing file: test_files\new_t01plusOTHER_FINAL.xlsx
+2025-08-15 08:08:08,323 - ERROR - Error processing test_files\new_t01plusFINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,329 - ERROR - Error processing test_files\new_t01plus.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,330 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:08:08,330 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:08:08,335 - ERROR - Failed: test_files\new_t01plusFINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,335 - ERROR - Failed: test_files\new_t01plus.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,349 - INFO - Processing sheet: Title
+2025-08-15 08:08:08,353 - INFO - Processing sheet: Work Order
+2025-08-15 08:08:08,358 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:08:08,368 - INFO - Processing sheet: Extra Items
+2025-08-15 08:08:08,373 - ERROR - Error processing test_files\new_t01plusFirst_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,374 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:08:08,374 - ERROR - Failed: test_files\new_t01plusFirst_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,394 - INFO - Processing sheet: Title
+2025-08-15 08:08:08,397 - INFO - Processing sheet: Work Order
+2025-08-15 08:08:08,402 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:08:08,410 - INFO - Processing sheet: Extra Items
+2025-08-15 08:08:08,415 - ERROR - Error processing test_files\new_t01plusOTHER_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,415 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:08:08,415 - ERROR - Failed: test_files\new_t01plusOTHER_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:08:08,417 - INFO - Batch processing completed in 0.74 seconds
+2025-08-15 08:08:08,417 - INFO - Success: 0, Failed: 10
+2025-08-15 08:08:08,417 - ERROR - Batch processing failed
+2025-08-15 08:51:48,242 - INFO - ==================================================
+2025-08-15 08:51:48,243 - INFO - STARTING END-TO-END TEST
+2025-08-15 08:51:48,243 - INFO - ==================================================
+2025-08-15 08:51:48,243 - INFO - Setting up test environment...
+2025-08-15 08:51:48,246 - INFO - Found 10 test files
+2025-08-15 08:51:48,246 - INFO - Starting batch processing...
+2025-08-15 08:51:48,247 - INFO - Starting batch processing of 10 files
+2025-08-15 08:51:48,247 - INFO - Output directory: C:\Users\Rajkumar\Bill_Transformation\test_output
+2025-08-15 08:51:48,248 - INFO - Processing file: test_files\3rdFinalNoExtra.xlsx
+2025-08-15 08:51:48,248 - INFO - Processing file: test_files\3rdFinalVidExtra.xlsx
+2025-08-15 08:51:48,249 - INFO - Processing file: test_files\3rdRunningNoExtra.xlsx
+2025-08-15 08:51:48,249 - INFO - Processing file: test_files\3rdRunningVidExtra.xlsx
+2025-08-15 08:51:48,318 - INFO - Processing sheet: Title
+2025-08-15 08:51:48,338 - INFO - Processing sheet: Title
+2025-08-15 08:51:48,345 - INFO - Processing sheet: Title
+2025-08-15 08:51:48,353 - INFO - Processing sheet: Work Order
+2025-08-15 08:51:48,357 - INFO - Processing sheet: Work Order
+2025-08-15 08:51:48,359 - INFO - Processing sheet: Work Order
+2025-08-15 08:51:48,372 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:51:48,383 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:51:48,383 - INFO - Processing sheet: Title
+2025-08-15 08:51:48,388 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:51:48,396 - INFO - Processing sheet: Extra Items
+2025-08-15 08:51:48,404 - INFO - Processing sheet: Extra Items
+2025-08-15 08:51:48,407 - INFO - Processing sheet: Work Order
+2025-08-15 08:51:48,415 - INFO - Processing sheet: Extra Items
+2025-08-15 08:51:48,431 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:51:48,466 - INFO - Processing sheet: Extra Items
+2025-08-15 08:51:48,730 - ERROR - Error processing test_files\3rdRunningVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,730 - ERROR - Error processing test_files\3rdRunningNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,730 - ERROR - Error processing test_files\3rdFinalVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,730 - ERROR - Error processing test_files\3rdFinalNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,739 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:51:48,739 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:51:48,739 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:51:48,739 - INFO - Processing file: test_files\FirstFINALnoExtra.xlsx
+2025-08-15 08:51:48,740 - ERROR - Failed: test_files\3rdRunningNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,740 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:51:48,740 - ERROR - Failed: test_files\3rdFinalNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,740 - INFO - Processing file: test_files\new_t01plus.xlsx
+2025-08-15 08:51:48,740 - INFO - Processing file: test_files\FirstFINALvidExtra.xlsx
+2025-08-15 08:51:48,740 - ERROR - Failed: test_files\3rdRunningVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,740 - INFO - Processing file: test_files\new_t01plusFINAL.xlsx
+2025-08-15 08:51:48,741 - ERROR - Failed: test_files\3rdFinalVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,805 - INFO - Processing sheet: Title
+2025-08-15 08:51:48,809 - INFO - Processing sheet: Work Order
+2025-08-15 08:51:48,816 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:51:48,825 - INFO - Processing sheet: Title
+2025-08-15 08:51:48,832 - INFO - Processing sheet: Title
+2025-08-15 08:51:48,839 - INFO - Processing sheet: Extra Items
+2025-08-15 08:51:48,842 - INFO - Processing sheet: Work Order
+2025-08-15 08:51:48,846 - INFO - Processing sheet: Work Order
+2025-08-15 08:51:48,857 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:51:48,867 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:51:48,867 - INFO - Processing sheet: Title
+2025-08-15 08:51:48,868 - ERROR - Error processing test_files\FirstFINALnoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,875 - INFO - Processing sheet: Extra Items
+2025-08-15 08:51:48,883 - INFO - Processing sheet: Extra Items
+2025-08-15 08:51:48,886 - INFO - Processing sheet: Work Order
+2025-08-15 08:51:48,886 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:51:48,896 - ERROR - Error processing test_files\FirstFINALvidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,902 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:51:48,902 - ERROR - Error processing test_files\new_t01plusFINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,902 - ERROR - Failed: test_files\FirstFINALnoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,902 - INFO - Processing file: test_files\new_t01plusFirst_FINAL.xlsx
+2025-08-15 08:51:48,910 - INFO - Processing sheet: Extra Items
+2025-08-15 08:51:48,910 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:51:48,911 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:51:48,917 - ERROR - Failed: test_files\FirstFINALvidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,917 - ERROR - Error processing test_files\new_t01plus.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,917 - INFO - Processing file: test_files\new_t01plusOTHER_FINAL.xlsx
+2025-08-15 08:51:48,917 - ERROR - Failed: test_files\new_t01plusFINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,918 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:51:48,918 - ERROR - Failed: test_files\new_t01plus.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,950 - INFO - Processing sheet: Title
+2025-08-15 08:51:48,955 - INFO - Processing sheet: Work Order
+2025-08-15 08:51:48,960 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:51:48,970 - INFO - Processing sheet: Extra Items
+2025-08-15 08:51:48,979 - ERROR - Error processing test_files\new_t01plusFirst_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,985 - INFO - Processing sheet: Title
+2025-08-15 08:51:48,986 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:51:48,988 - INFO - Processing sheet: Work Order
+2025-08-15 08:51:48,988 - ERROR - Failed: test_files\new_t01plusFirst_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:48,994 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:51:49,002 - INFO - Processing sheet: Extra Items
+2025-08-15 08:51:49,008 - ERROR - Error processing test_files\new_t01plusOTHER_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:49,008 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:51:49,009 - ERROR - Failed: test_files\new_t01plusOTHER_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:51:49,009 - INFO - Batch processing completed in 0.76 seconds
+2025-08-15 08:51:49,009 - INFO - Success: 0, Failed: 10
+2025-08-15 08:51:49,009 - ERROR - Batch processing failed
+2025-08-15 08:53:16,249 - INFO - ==================================================
+2025-08-15 08:53:16,249 - INFO - STARTING END-TO-END TEST
+2025-08-15 08:53:16,249 - INFO - ==================================================
+2025-08-15 08:53:16,249 - INFO - Setting up test environment...
+2025-08-15 08:53:16,252 - INFO - Found 10 test files
+2025-08-15 08:53:16,253 - INFO - Starting batch processing...
+2025-08-15 08:53:16,254 - INFO - Starting batch processing of 10 files
+2025-08-15 08:53:16,254 - INFO - Output directory: C:\Users\Rajkumar\Bill_Transformation\test_output
+2025-08-15 08:53:16,255 - INFO - Processing file: test_files\3rdFinalNoExtra.xlsx
+2025-08-15 08:53:16,255 - INFO - Processing file: test_files\3rdFinalVidExtra.xlsx
+2025-08-15 08:53:16,256 - INFO - Processing file: test_files\3rdRunningVidExtra.xlsx
+2025-08-15 08:53:16,256 - INFO - Processing file: test_files\3rdRunningNoExtra.xlsx
+2025-08-15 08:53:16,316 - INFO - Processing sheet: Title
+2025-08-15 08:53:16,330 - INFO - Processing sheet: Title
+2025-08-15 08:53:16,344 - INFO - Processing sheet: Title
+2025-08-15 08:53:16,351 - INFO - Processing sheet: Title
+2025-08-15 08:53:16,357 - INFO - Processing sheet: Work Order
+2025-08-15 08:53:16,359 - INFO - Processing sheet: Work Order
+2025-08-15 08:53:16,362 - INFO - Processing sheet: Work Order
+2025-08-15 08:53:16,365 - INFO - Processing sheet: Work Order
+2025-08-15 08:53:16,374 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:53:16,379 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:53:16,384 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:53:16,389 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:53:16,397 - INFO - Processing sheet: Extra Items
+2025-08-15 08:53:16,404 - INFO - Processing sheet: Extra Items
+2025-08-15 08:53:16,413 - INFO - Processing sheet: Extra Items
+2025-08-15 08:53:16,420 - INFO - Processing sheet: Extra Items
+2025-08-15 08:53:16,707 - ERROR - Error processing test_files\3rdRunningVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,707 - ERROR - Error processing test_files\3rdRunningNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,707 - ERROR - Error processing test_files\3rdFinalNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,707 - ERROR - Error processing test_files\3rdFinalVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,708 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:53:16,709 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:53:16,709 - ERROR - Failed: test_files\3rdRunningVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,709 - INFO - Processing file: test_files\FirstFINALnoExtra.xlsx
+2025-08-15 08:53:16,709 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:53:16,709 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:53:16,709 - ERROR - Failed: test_files\3rdRunningNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,709 - INFO - Processing file: test_files\FirstFINALvidExtra.xlsx
+2025-08-15 08:53:16,709 - INFO - Processing file: test_files\new_t01plus.xlsx
+2025-08-15 08:53:16,709 - INFO - Processing file: test_files\new_t01plusFINAL.xlsx
+2025-08-15 08:53:16,710 - ERROR - Failed: test_files\3rdFinalNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,710 - ERROR - Failed: test_files\3rdFinalVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,764 - INFO - Processing sheet: Title
+2025-08-15 08:53:16,772 - INFO - Processing sheet: Work Order
+2025-08-15 08:53:16,777 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:53:16,785 - INFO - Processing sheet: Extra Items
+2025-08-15 08:53:16,796 - INFO - Processing sheet: Title
+2025-08-15 08:53:16,804 - INFO - Processing sheet: Title
+2025-08-15 08:53:16,811 - INFO - Processing sheet: Work Order
+2025-08-15 08:53:16,818 - INFO - Processing sheet: Title
+2025-08-15 08:53:16,818 - ERROR - Error processing test_files\FirstFINALnoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,821 - INFO - Processing sheet: Work Order
+2025-08-15 08:53:16,826 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:53:16,829 - INFO - Processing sheet: Work Order
+2025-08-15 08:53:16,829 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:53:16,834 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:53:16,842 - INFO - Processing sheet: Extra Items
+2025-08-15 08:53:16,847 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:53:16,847 - ERROR - Failed: test_files\FirstFINALnoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,847 - INFO - Processing file: test_files\new_t01plusFirst_FINAL.xlsx
+2025-08-15 08:53:16,855 - INFO - Processing sheet: Extra Items
+2025-08-15 08:53:16,866 - INFO - Processing sheet: Extra Items
+2025-08-15 08:53:16,866 - ERROR - Error processing test_files\FirstFINALvidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,879 - ERROR - Error processing test_files\new_t01plusFINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,879 - ERROR - Error processing test_files\new_t01plus.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,879 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:53:16,879 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:53:16,880 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:53:16,880 - ERROR - Failed: test_files\FirstFINALvidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,881 - INFO - Processing file: test_files\new_t01plusOTHER_FINAL.xlsx
+2025-08-15 08:53:16,882 - ERROR - Failed: test_files\new_t01plusFINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,883 - ERROR - Failed: test_files\new_t01plus.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,909 - INFO - Processing sheet: Title
+2025-08-15 08:53:16,914 - INFO - Processing sheet: Work Order
+2025-08-15 08:53:16,919 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:53:16,929 - INFO - Processing sheet: Extra Items
+2025-08-15 08:53:16,938 - ERROR - Error processing test_files\new_t01plusFirst_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,938 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:53:16,939 - ERROR - Failed: test_files\new_t01plusFirst_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,946 - INFO - Processing sheet: Title
+2025-08-15 08:53:16,949 - INFO - Processing sheet: Work Order
+2025-08-15 08:53:16,954 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:53:16,961 - INFO - Processing sheet: Extra Items
+2025-08-15 08:53:16,967 - ERROR - Error processing test_files\new_t01plusOTHER_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,967 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:53:16,968 - ERROR - Failed: test_files\new_t01plusOTHER_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:53:16,969 - INFO - Batch processing completed in 0.72 seconds
+2025-08-15 08:53:16,969 - INFO - Success: 0, Failed: 10
+2025-08-15 08:53:16,969 - ERROR - Batch processing failed
+2025-08-15 08:54:41,826 - INFO - ==================================================
+2025-08-15 08:54:41,826 - INFO - STARTING END-TO-END TEST
+2025-08-15 08:54:41,826 - INFO - ==================================================
+2025-08-15 08:54:41,826 - INFO - Setting up test environment...
+2025-08-15 08:54:41,829 - INFO - Found 10 test files
+2025-08-15 08:54:41,829 - INFO - Starting batch processing...
+2025-08-15 08:54:41,829 - INFO - Starting batch processing of 10 files
+2025-08-15 08:54:41,829 - INFO - Output directory: C:\Users\Rajkumar\Bill_Transformation\test_output
+2025-08-15 08:54:41,830 - INFO - Processing file: test_files\3rdFinalNoExtra.xlsx
+2025-08-15 08:54:41,830 - INFO - Processing file: test_files\3rdFinalVidExtra.xlsx
+2025-08-15 08:54:41,830 - INFO - Processing file: test_files\3rdRunningNoExtra.xlsx
+2025-08-15 08:54:41,830 - INFO - Processing file: test_files\3rdRunningVidExtra.xlsx
+2025-08-15 08:54:41,890 - INFO - Processing sheet: Title
+2025-08-15 08:54:41,901 - INFO - Processing sheet: Title
+2025-08-15 08:54:41,915 - INFO - Processing sheet: Title
+2025-08-15 08:54:41,918 - INFO - Processing sheet: Work Order
+2025-08-15 08:54:41,921 - INFO - Processing sheet: Work Order
+2025-08-15 08:54:41,926 - INFO - Processing sheet: Work Order
+2025-08-15 08:54:41,932 - INFO - Processing sheet: Title
+2025-08-15 08:54:41,938 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:54:41,942 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:54:41,948 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:54:41,951 - INFO - Processing sheet: Work Order
+2025-08-15 08:54:41,958 - INFO - Processing sheet: Extra Items
+2025-08-15 08:54:41,972 - INFO - Processing sheet: Extra Items
+2025-08-15 08:54:41,974 - INFO - Processing sheet: Extra Items
+2025-08-15 08:54:41,979 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:54:42,003 - INFO - Processing sheet: Extra Items
+2025-08-15 08:54:42,240 - ERROR - Error processing test_files\3rdRunningVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,240 - ERROR - Error processing test_files\3rdFinalVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,240 - ERROR - Error processing test_files\3rdRunningNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,241 - ERROR - Error processing test_files\3rdFinalNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,241 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:54:42,241 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:54:42,241 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:54:42,241 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:54:42,242 - ERROR - Failed: test_files\3rdFinalVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,242 - INFO - Processing file: test_files\FirstFINALvidExtra.xlsx
+2025-08-15 08:54:42,242 - INFO - Processing file: test_files\FirstFINALnoExtra.xlsx
+2025-08-15 08:54:42,242 - INFO - Processing file: test_files\new_t01plus.xlsx
+2025-08-15 08:54:42,242 - ERROR - Failed: test_files\3rdRunningVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,242 - INFO - Processing file: test_files\new_t01plusFINAL.xlsx
+2025-08-15 08:54:42,243 - ERROR - Failed: test_files\3rdFinalNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,244 - ERROR - Failed: test_files\3rdRunningNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,303 - INFO - Processing sheet: Title
+2025-08-15 08:54:42,309 - INFO - Processing sheet: Work Order
+2025-08-15 08:54:42,319 - INFO - Processing sheet: Title
+2025-08-15 08:54:42,324 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:54:42,326 - INFO - Processing sheet: Work Order
+2025-08-15 08:54:42,335 - INFO - Processing sheet: Title
+2025-08-15 08:54:42,342 - INFO - Processing sheet: Extra Items
+2025-08-15 08:54:42,350 - INFO - Processing sheet: Title
+2025-08-15 08:54:42,355 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:54:42,358 - INFO - Processing sheet: Work Order
+2025-08-15 08:54:42,364 - INFO - Processing sheet: Work Order
+2025-08-15 08:54:42,364 - ERROR - Error processing test_files\FirstFINALnoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,372 - INFO - Processing sheet: Extra Items
+2025-08-15 08:54:42,378 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:54:42,382 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:54:42,383 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:54:42,396 - INFO - Processing sheet: Extra Items
+2025-08-15 08:54:42,403 - INFO - Processing sheet: Extra Items
+2025-08-15 08:54:42,403 - ERROR - Failed: test_files\FirstFINALnoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,403 - ERROR - Error processing test_files\new_t01plusFINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,409 - INFO - Processing file: test_files\new_t01plusFirst_FINAL.xlsx
+2025-08-15 08:54:42,415 - ERROR - Error processing test_files\new_t01plus.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,415 - ERROR - Error processing test_files\FirstFINALvidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,415 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:54:42,416 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:54:42,416 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:54:42,416 - ERROR - Failed: test_files\new_t01plusFINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,416 - INFO - Processing file: test_files\new_t01plusOTHER_FINAL.xlsx
+2025-08-15 08:54:42,416 - ERROR - Failed: test_files\new_t01plus.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,418 - ERROR - Failed: test_files\FirstFINALvidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,449 - INFO - Processing sheet: Title
+2025-08-15 08:54:42,455 - INFO - Processing sheet: Work Order
+2025-08-15 08:54:42,463 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:54:42,470 - INFO - Processing sheet: Title
+2025-08-15 08:54:42,479 - INFO - Processing sheet: Extra Items
+2025-08-15 08:54:42,482 - INFO - Processing sheet: Work Order
+2025-08-15 08:54:42,491 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:54:42,491 - ERROR - Error processing test_files\new_t01plusFirst_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,500 - INFO - Processing sheet: Extra Items
+2025-08-15 08:54:42,500 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:54:42,506 - ERROR - Failed: test_files\new_t01plusFirst_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,506 - ERROR - Error processing test_files\new_t01plusOTHER_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,506 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:54:42,506 - ERROR - Failed: test_files\new_t01plusOTHER_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:54:42,507 - INFO - Batch processing completed in 0.68 seconds
+2025-08-15 08:54:42,507 - INFO - Success: 0, Failed: 10
+2025-08-15 08:54:42,507 - ERROR - Batch processing failed
+2025-08-15 08:57:36,446 - INFO - ==================================================
+2025-08-15 08:57:36,446 - INFO - STARTING END-TO-END TEST
+2025-08-15 08:57:36,446 - INFO - ==================================================
+2025-08-15 08:57:36,446 - INFO - Setting up test environment...
+2025-08-15 08:57:36,449 - INFO - Found 10 test files
+2025-08-15 08:57:36,449 - INFO - Starting batch processing...
+2025-08-15 08:57:36,450 - INFO - Starting batch processing of 10 files
+2025-08-15 08:57:36,450 - INFO - Output directory: C:\Users\Rajkumar\Bill_Transformation\test_output
+2025-08-15 08:57:36,451 - INFO - Processing file: test_files\3rdFinalNoExtra.xlsx
+2025-08-15 08:57:36,451 - INFO - Processing file: test_files\3rdFinalVidExtra.xlsx
+2025-08-15 08:57:36,451 - INFO - Processing file: test_files\3rdRunningVidExtra.xlsx
+2025-08-15 08:57:36,451 - INFO - Processing file: test_files\3rdRunningNoExtra.xlsx
+2025-08-15 08:57:36,516 - INFO - Processing sheet: Title
+2025-08-15 08:57:36,525 - INFO - Processing sheet: Title
+2025-08-15 08:57:36,532 - INFO - Processing sheet: Title
+2025-08-15 08:57:36,541 - INFO - Processing sheet: Title
+2025-08-15 08:57:36,545 - INFO - Processing sheet: Work Order
+2025-08-15 08:57:36,546 - INFO - Processing sheet: Work Order
+2025-08-15 08:57:36,549 - INFO - Processing sheet: Work Order
+2025-08-15 08:57:36,555 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:57:36,557 - INFO - Processing sheet: Work Order
+2025-08-15 08:57:36,561 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:57:36,566 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:57:36,574 - INFO - Processing sheet: Extra Items
+2025-08-15 08:57:36,579 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:57:36,587 - INFO - Processing sheet: Extra Items
+2025-08-15 08:57:36,593 - INFO - Processing sheet: Extra Items
+2025-08-15 08:57:36,606 - INFO - Processing sheet: Extra Items
+2025-08-15 08:57:36,851 - ERROR - Error processing test_files\3rdRunningVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:36,851 - ERROR - Error processing test_files\3rdRunningNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:36,851 - ERROR - Error processing test_files\3rdFinalVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:36,852 - ERROR - Error processing test_files\3rdFinalNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:36,853 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:57:36,853 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:57:36,854 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:57:36,854 - ERROR - Failed: test_files\3rdRunningVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:36,854 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:57:36,855 - ERROR - Failed: test_files\3rdFinalNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:36,855 - ERROR - Failed: test_files\3rdRunningNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:36,855 - ERROR - Failed: test_files\3rdFinalVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:36,898 - INFO - Processing file: test_files\FirstFINALnoExtra.xlsx
+2025-08-15 08:57:36,898 - INFO - Processing file: test_files\FirstFINALvidExtra.xlsx
+2025-08-15 08:57:36,898 - INFO - Processing file: test_files\new_t01plus.xlsx
+2025-08-15 08:57:36,898 - INFO - Processing file: test_files\new_t01plusFINAL.xlsx
+2025-08-15 08:57:36,964 - INFO - Processing sheet: Title
+2025-08-15 08:57:36,970 - INFO - Processing sheet: Title
+2025-08-15 08:57:36,974 - INFO - Processing sheet: Work Order
+2025-08-15 08:57:36,984 - INFO - Processing sheet: Work Order
+2025-08-15 08:57:36,985 - INFO - Processing sheet: Title
+2025-08-15 08:57:36,990 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:57:36,998 - INFO - Processing sheet: Title
+2025-08-15 08:57:37,003 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:57:37,005 - INFO - Processing sheet: Work Order
+2025-08-15 08:57:37,014 - INFO - Processing sheet: Extra Items
+2025-08-15 08:57:37,015 - INFO - Processing sheet: Work Order
+2025-08-15 08:57:37,024 - INFO - Processing sheet: Extra Items
+2025-08-15 08:57:37,029 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:57:37,038 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:57:37,038 - ERROR - Error processing test_files\FirstFINALnoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:37,051 - INFO - Processing sheet: Extra Items
+2025-08-15 08:57:37,051 - ERROR - Error processing test_files\new_t01plus.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:37,059 - INFO - Processing sheet: Extra Items
+2025-08-15 08:57:37,060 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:57:37,065 - ERROR - Error processing test_files\FirstFINALvidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:37,065 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:57:37,071 - ERROR - Failed: test_files\FirstFINALnoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:37,071 - ERROR - Error processing test_files\new_t01plusFINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:37,071 - INFO - Processing file: test_files\new_t01plusFirst_FINAL.xlsx
+2025-08-15 08:57:37,072 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:57:37,072 - ERROR - Failed: test_files\new_t01plus.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:37,072 - INFO - Processing file: test_files\new_t01plusOTHER_FINAL.xlsx
+2025-08-15 08:57:37,072 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:57:37,073 - ERROR - Failed: test_files\FirstFINALvidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:37,073 - ERROR - Failed: test_files\new_t01plusFINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:37,107 - INFO - Processing sheet: Title
+2025-08-15 08:57:37,112 - INFO - Processing sheet: Work Order
+2025-08-15 08:57:37,125 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:57:37,126 - INFO - Processing sheet: Title
+2025-08-15 08:57:37,132 - INFO - Processing sheet: Extra Items
+2025-08-15 08:57:37,135 - INFO - Processing sheet: Work Order
+2025-08-15 08:57:37,141 - ERROR - Error processing test_files\new_t01plusFirst_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:37,145 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:57:37,146 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:57:37,153 - INFO - Processing sheet: Extra Items
+2025-08-15 08:57:37,154 - ERROR - Failed: test_files\new_t01plusFirst_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:37,159 - ERROR - Error processing test_files\new_t01plusOTHER_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:37,160 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:57:37,160 - ERROR - Failed: test_files\new_t01plusOTHER_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:57:37,160 - INFO - Batch processing completed in 0.71 seconds
+2025-08-15 08:57:37,160 - INFO - Success: 0, Failed: 10
+2025-08-15 08:57:37,160 - ERROR - Batch processing failed
+2025-08-15 08:59:26,096 - INFO - ==================================================
+2025-08-15 08:59:26,097 - INFO - STARTING END-TO-END TEST
+2025-08-15 08:59:26,097 - INFO - ==================================================
+2025-08-15 08:59:26,097 - INFO - Setting up test environment...
+2025-08-15 08:59:26,099 - INFO - Found 10 test files
+2025-08-15 08:59:26,099 - INFO - Starting batch processing...
+2025-08-15 08:59:26,099 - INFO - Starting batch processing of 10 files
+2025-08-15 08:59:26,099 - INFO - Output directory: C:\Users\Rajkumar\Bill_Transformation\test_output
+2025-08-15 08:59:26,101 - INFO - Processing file: test_files\3rdFinalNoExtra.xlsx
+2025-08-15 08:59:26,101 - INFO - Processing file: test_files\3rdFinalVidExtra.xlsx
+2025-08-15 08:59:26,101 - INFO - Processing file: test_files\3rdRunningVidExtra.xlsx
+2025-08-15 08:59:26,101 - INFO - Processing file: test_files\3rdRunningNoExtra.xlsx
+2025-08-15 08:59:26,163 - INFO - Processing sheet: Title
+2025-08-15 08:59:26,177 - INFO - Processing sheet: Title
+2025-08-15 08:59:26,185 - INFO - Processing sheet: Title
+2025-08-15 08:59:26,192 - INFO - Processing sheet: Title
+2025-08-15 08:59:26,195 - INFO - Processing sheet: Work Order
+2025-08-15 08:59:26,196 - INFO - Processing sheet: Work Order
+2025-08-15 08:59:26,200 - INFO - Processing sheet: Work Order
+2025-08-15 08:59:26,201 - INFO - Processing sheet: Work Order
+2025-08-15 08:59:26,207 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:59:26,212 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:59:26,216 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:59:26,222 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:59:26,230 - INFO - Processing sheet: Extra Items
+2025-08-15 08:59:26,237 - INFO - Processing sheet: Extra Items
+2025-08-15 08:59:26,245 - INFO - Processing sheet: Extra Items
+2025-08-15 08:59:26,256 - INFO - Processing sheet: Extra Items
+2025-08-15 08:59:26,504 - ERROR - Error processing test_files\3rdFinalNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,504 - ERROR - Error processing test_files\3rdRunningNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,504 - ERROR - Error processing test_files\3rdFinalVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,504 - ERROR - Error processing test_files\3rdRunningVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,505 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:59:26,505 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:59:26,506 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:59:26,506 - ERROR - Failed: test_files\3rdFinalNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,506 - INFO - Processing file: test_files\FirstFINALnoExtra.xlsx
+2025-08-15 08:59:26,506 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:59:26,506 - INFO - Processing file: test_files\FirstFINALvidExtra.xlsx
+2025-08-15 08:59:26,507 - INFO - Processing file: test_files\new_t01plus.xlsx
+2025-08-15 08:59:26,507 - ERROR - Failed: test_files\3rdRunningNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,508 - INFO - Processing file: test_files\new_t01plusFINAL.xlsx
+2025-08-15 08:59:26,508 - ERROR - Failed: test_files\3rdRunningVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,508 - ERROR - Failed: test_files\3rdFinalVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,568 - INFO - Processing sheet: Title
+2025-08-15 08:59:26,572 - INFO - Processing sheet: Work Order
+2025-08-15 08:59:26,578 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:59:26,586 - INFO - Processing sheet: Title
+2025-08-15 08:59:26,594 - INFO - Processing sheet: Title
+2025-08-15 08:59:26,602 - INFO - Processing sheet: Extra Items
+2025-08-15 08:59:26,609 - INFO - Processing sheet: Title
+2025-08-15 08:59:26,611 - INFO - Processing sheet: Work Order
+2025-08-15 08:59:26,615 - INFO - Processing sheet: Work Order
+2025-08-15 08:59:26,619 - ERROR - Error processing test_files\new_t01plusFINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,622 - INFO - Processing sheet: Work Order
+2025-08-15 08:59:26,627 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:59:26,632 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:59:26,632 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:59:26,637 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:59:26,645 - INFO - Processing sheet: Extra Items
+2025-08-15 08:59:26,653 - INFO - Processing sheet: Extra Items
+2025-08-15 08:59:26,653 - ERROR - Failed: test_files\new_t01plusFINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,661 - INFO - Processing sheet: Extra Items
+2025-08-15 08:59:26,661 - INFO - Processing file: test_files\new_t01plusFirst_FINAL.xlsx
+2025-08-15 08:59:26,670 - ERROR - Error processing test_files\FirstFINALnoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,675 - ERROR - Error processing test_files\FirstFINALvidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,676 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:59:26,676 - ERROR - Error processing test_files\new_t01plus.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,676 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:59:26,676 - ERROR - Failed: test_files\FirstFINALnoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,676 - INFO - Processing file: test_files\new_t01plusOTHER_FINAL.xlsx
+2025-08-15 08:59:26,676 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:59:26,678 - ERROR - Failed: test_files\FirstFINALvidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,680 - ERROR - Failed: test_files\new_t01plus.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,709 - INFO - Processing sheet: Title
+2025-08-15 08:59:26,712 - INFO - Processing sheet: Work Order
+2025-08-15 08:59:26,717 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:59:26,725 - INFO - Processing sheet: Extra Items
+2025-08-15 08:59:26,736 - ERROR - Error processing test_files\new_t01plusFirst_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,738 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:59:26,739 - ERROR - Failed: test_files\new_t01plusFirst_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,745 - INFO - Processing sheet: Title
+2025-08-15 08:59:26,748 - INFO - Processing sheet: Work Order
+2025-08-15 08:59:26,754 - INFO - Processing sheet: Bill Quantity
+2025-08-15 08:59:26,761 - INFO - Processing sheet: Extra Items
+2025-08-15 08:59:26,766 - ERROR - Error processing test_files\new_t01plusOTHER_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,766 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 08:59:26,766 - ERROR - Failed: test_files\new_t01plusOTHER_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 08:59:26,766 - INFO - Batch processing completed in 0.67 seconds
+2025-08-15 08:59:26,766 - INFO - Success: 0, Failed: 10
+2025-08-15 08:59:26,768 - ERROR - Batch processing failed
+2025-08-15 09:02:22,301 - INFO - ==================================================
+2025-08-15 09:02:22,301 - INFO - STARTING END-TO-END TEST
+2025-08-15 09:02:22,301 - INFO - ==================================================
+2025-08-15 09:02:22,301 - INFO - Setting up test environment...
+2025-08-15 09:02:22,303 - INFO - Found 10 test files
+2025-08-15 09:02:22,303 - INFO - Starting batch processing...
+2025-08-15 09:02:22,304 - INFO - Starting batch processing of 10 files
+2025-08-15 09:02:22,304 - INFO - Output directory: C:\Users\Rajkumar\Bill_Transformation\test_output
+2025-08-15 09:02:22,305 - INFO - Processing file: test_files\3rdFinalNoExtra.xlsx
+2025-08-15 09:02:22,305 - INFO - Processing file: test_files\3rdFinalVidExtra.xlsx
+2025-08-15 09:02:22,306 - INFO - Processing file: test_files\3rdRunningNoExtra.xlsx
+2025-08-15 09:02:22,306 - INFO - Processing file: test_files\3rdRunningVidExtra.xlsx
+2025-08-15 09:02:22,361 - INFO - Processing sheet: Title
+2025-08-15 09:02:22,372 - INFO - Processing sheet: Title
+2025-08-15 09:02:22,381 - INFO - Processing sheet: Work Order
+2025-08-15 09:02:22,385 - INFO - Processing sheet: Work Order
+2025-08-15 09:02:22,391 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:02:22,399 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:02:22,413 - INFO - Processing sheet: Extra Items
+2025-08-15 09:02:22,422 - INFO - Processing sheet: Extra Items
+2025-08-15 09:02:22,428 - INFO - Processing sheet: Title
+2025-08-15 09:02:22,443 - INFO - Processing sheet: Work Order
+2025-08-15 09:02:22,443 - INFO - Processing sheet: Title
+2025-08-15 09:02:22,448 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:02:22,451 - INFO - Processing sheet: Work Order
+2025-08-15 09:02:22,459 - INFO - Processing sheet: Extra Items
+2025-08-15 09:02:22,470 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:02:22,492 - INFO - Processing sheet: Extra Items
+2025-08-15 09:02:22,711 - ERROR - Error processing test_files\3rdRunningVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,711 - ERROR - Error processing test_files\3rdRunningNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,711 - ERROR - Error processing test_files\3rdFinalNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,711 - ERROR - Error processing test_files\3rdFinalVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,712 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:02:22,712 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:02:22,712 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:02:22,713 - ERROR - Failed: test_files\3rdRunningVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,713 - INFO - Processing file: test_files\FirstFINALnoExtra.xlsx
+2025-08-15 09:02:22,713 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:02:22,713 - INFO - Processing file: test_files\FirstFINALvidExtra.xlsx
+2025-08-15 09:02:22,713 - ERROR - Failed: test_files\3rdFinalVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,713 - INFO - Processing file: test_files\new_t01plus.xlsx
+2025-08-15 09:02:22,714 - INFO - Processing file: test_files\new_t01plusFINAL.xlsx
+2025-08-15 09:02:22,714 - ERROR - Failed: test_files\3rdRunningNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,714 - ERROR - Failed: test_files\3rdFinalNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,795 - INFO - Processing sheet: Title
+2025-08-15 09:02:22,801 - INFO - Processing sheet: Work Order
+2025-08-15 09:02:22,809 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:02:22,814 - INFO - Processing sheet: Title
+2025-08-15 09:02:22,821 - INFO - Processing sheet: Title
+2025-08-15 09:02:22,829 - INFO - Processing sheet: Extra Items
+2025-08-15 09:02:22,832 - INFO - Processing sheet: Work Order
+2025-08-15 09:02:22,835 - INFO - Processing sheet: Work Order
+2025-08-15 09:02:22,846 - INFO - Processing sheet: Title
+2025-08-15 09:02:22,848 - ERROR - Error processing test_files\FirstFINALvidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,852 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:02:22,858 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:02:22,861 - INFO - Processing sheet: Work Order
+2025-08-15 09:02:22,861 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:02:22,869 - INFO - Processing sheet: Extra Items
+2025-08-15 09:02:22,877 - INFO - Processing sheet: Extra Items
+2025-08-15 09:02:22,882 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:02:22,887 - INFO - Processing file: test_files\new_t01plusFirst_FINAL.xlsx
+2025-08-15 09:02:22,887 - ERROR - Failed: test_files\FirstFINALvidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,887 - ERROR - Error processing test_files\new_t01plusFINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,899 - INFO - Processing sheet: Extra Items
+2025-08-15 09:02:22,899 - ERROR - Error processing test_files\FirstFINALnoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,904 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:02:22,904 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:02:22,904 - ERROR - Error processing test_files\new_t01plus.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,904 - ERROR - Failed: test_files\new_t01plusFINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,905 - INFO - Processing file: test_files\new_t01plusOTHER_FINAL.xlsx
+2025-08-15 09:02:22,906 - ERROR - Failed: test_files\FirstFINALnoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,906 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:02:22,908 - ERROR - Failed: test_files\new_t01plus.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,932 - INFO - Processing sheet: Title
+2025-08-15 09:02:22,935 - INFO - Processing sheet: Work Order
+2025-08-15 09:02:22,943 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:02:22,953 - INFO - Processing sheet: Extra Items
+2025-08-15 09:02:22,960 - ERROR - Error processing test_files\new_t01plusFirst_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,971 - INFO - Processing sheet: Title
+2025-08-15 09:02:22,971 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:02:22,974 - INFO - Processing sheet: Work Order
+2025-08-15 09:02:22,974 - ERROR - Failed: test_files\new_t01plusFirst_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,979 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:02:22,986 - INFO - Processing sheet: Extra Items
+2025-08-15 09:02:22,992 - ERROR - Error processing test_files\new_t01plusOTHER_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,992 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:02:22,992 - ERROR - Failed: test_files\new_t01plusOTHER_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:02:22,993 - INFO - Batch processing completed in 0.69 seconds
+2025-08-15 09:02:22,993 - INFO - Success: 0, Failed: 10
+2025-08-15 09:02:22,993 - ERROR - Batch processing failed
+2025-08-15 09:03:00,676 - INFO - ==================================================
+2025-08-15 09:03:00,676 - INFO - STARTING END-TO-END TEST
+2025-08-15 09:03:00,676 - INFO - ==================================================
+2025-08-15 09:03:00,676 - INFO - Setting up test environment...
+2025-08-15 09:03:00,680 - INFO - Found 10 test files
+2025-08-15 09:03:00,680 - INFO - Starting batch processing...
+2025-08-15 09:03:00,680 - INFO - Starting batch processing of 10 files
+2025-08-15 09:03:00,680 - INFO - Output directory: C:\Users\Rajkumar\Bill_Transformation\test_output
+2025-08-15 09:03:00,681 - INFO - Processing file: test_files\3rdFinalNoExtra.xlsx
+2025-08-15 09:03:00,681 - INFO - Processing file: test_files\3rdFinalVidExtra.xlsx
+2025-08-15 09:03:00,682 - INFO - Processing file: test_files\3rdRunningNoExtra.xlsx
+2025-08-15 09:03:00,682 - INFO - Processing file: test_files\3rdRunningVidExtra.xlsx
+2025-08-15 09:03:00,746 - INFO - Processing sheet: Title
+2025-08-15 09:03:00,757 - INFO - Processing sheet: Title
+2025-08-15 09:03:00,764 - INFO - Processing sheet: Title
+2025-08-15 09:03:00,773 - INFO - Processing sheet: Title
+2025-08-15 09:03:00,776 - INFO - Processing sheet: Work Order
+2025-08-15 09:03:00,778 - INFO - Processing sheet: Work Order
+2025-08-15 09:03:00,780 - INFO - Processing sheet: Work Order
+2025-08-15 09:03:00,783 - INFO - Processing sheet: Work Order
+2025-08-15 09:03:00,788 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:03:00,792 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:03:00,796 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:03:00,801 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:03:00,810 - INFO - Processing sheet: Extra Items
+2025-08-15 09:03:00,816 - INFO - Processing sheet: Extra Items
+2025-08-15 09:03:00,824 - INFO - Processing sheet: Extra Items
+2025-08-15 09:03:00,832 - INFO - Processing sheet: Extra Items
+2025-08-15 09:03:01,110 - ERROR - Error processing test_files\3rdRunningNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,110 - ERROR - Error processing test_files\3rdFinalNoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,110 - ERROR - Error processing test_files\3rdFinalVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,111 - ERROR - Error processing test_files\3rdRunningVidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,111 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:03:01,111 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:03:01,111 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:03:01,111 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:03:01,113 - ERROR - Failed: test_files\3rdFinalNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,113 - INFO - Processing file: test_files\FirstFINALnoExtra.xlsx
+2025-08-15 09:03:01,113 - INFO - Processing file: test_files\FirstFINALvidExtra.xlsx
+2025-08-15 09:03:01,113 - INFO - Processing file: test_files\new_t01plus.xlsx
+2025-08-15 09:03:01,113 - INFO - Processing file: test_files\new_t01plusFINAL.xlsx
+2025-08-15 09:03:01,113 - ERROR - Failed: test_files\3rdRunningNoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,114 - ERROR - Failed: test_files\3rdFinalVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,114 - ERROR - Failed: test_files\3rdRunningVidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,173 - INFO - Processing sheet: Title
+2025-08-15 09:03:01,176 - INFO - Processing sheet: Work Order
+2025-08-15 09:03:01,181 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:03:01,189 - INFO - Processing sheet: Extra Items
+2025-08-15 09:03:01,198 - ERROR - Error processing test_files\new_t01plus.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,205 - INFO - Processing sheet: Title
+2025-08-15 09:03:01,207 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:03:01,210 - INFO - Processing sheet: Work Order
+2025-08-15 09:03:01,220 - ERROR - Failed: test_files\new_t01plus.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,220 - INFO - Processing file: test_files\new_t01plusFirst_FINAL.xlsx
+2025-08-15 09:03:01,225 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:03:01,225 - INFO - Processing sheet: Title
+2025-08-15 09:03:01,234 - INFO - Processing sheet: Title
+2025-08-15 09:03:01,243 - INFO - Processing sheet: Work Order
+2025-08-15 09:03:01,245 - INFO - Processing sheet: Extra Items
+2025-08-15 09:03:01,248 - INFO - Processing sheet: Work Order
+2025-08-15 09:03:01,253 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:03:01,263 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:03:01,263 - ERROR - Error processing test_files\FirstFINALvidExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,270 - INFO - Processing sheet: Extra Items
+2025-08-15 09:03:01,278 - INFO - Processing sheet: Extra Items
+2025-08-15 09:03:01,278 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:03:01,283 - ERROR - Error processing test_files\FirstFINALnoExtra.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,288 - ERROR - Failed: test_files\FirstFINALvidExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,289 - ERROR - Error processing test_files\new_t01plusFINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,289 - INFO - Processing file: test_files\new_t01plusOTHER_FINAL.xlsx
+2025-08-15 09:03:01,291 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:03:01,291 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:03:01,291 - ERROR - Failed: test_files\FirstFINALnoExtra.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,291 - ERROR - Failed: test_files\new_t01plusFINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,314 - INFO - Processing sheet: Title
+2025-08-15 09:03:01,318 - INFO - Processing sheet: Work Order
+2025-08-15 09:03:01,324 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:03:01,336 - INFO - Processing sheet: Extra Items
+2025-08-15 09:03:01,343 - ERROR - Error processing test_files\new_t01plusFirst_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,348 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:03:01,351 - ERROR - Failed: test_files\new_t01plusFirst_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,358 - INFO - Processing sheet: Title
+2025-08-15 09:03:01,364 - INFO - Processing sheet: Work Order
+2025-08-15 09:03:01,368 - INFO - Processing sheet: Bill Quantity
+2025-08-15 09:03:01,376 - INFO - Processing sheet: Extra Items
+2025-08-15 09:03:01,382 - ERROR - Error processing test_files\new_t01plusOTHER_FINAL.xlsx: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,383 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Rajkumar\Bill_Transformation\batch_processor.py", line 81, in process_single_file
+    generated_files = generator.generate_all_documents(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+
+2025-08-15 09:03:01,383 - ERROR - Failed: test_files\new_t01plusOTHER_FINAL.xlsx - DocumentGeneratorV04.generate_all_documents() got an unexpected keyword argument 'premium_percentage'
+2025-08-15 09:03:01,383 - INFO - Batch processing completed in 0.70 seconds
+2025-08-15 09:03:01,383 - INFO - Success: 0, Failed: 10
+2025-08-15 09:03:01,383 - ERROR - Batch processing failed

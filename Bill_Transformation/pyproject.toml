@@ -1,0 +1,17 @@
+[project]
+name = "repl-nix-workspace"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11"
+dependencies = [
+    "docx>=0.2.4",
+    "jinja2>=3.1.6",
+    "numpy>=2.3.2",
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.1",
+    "pdfkit>=1.0.0",
+    "python-docx>=1.2.0",
+    "streamlit>=1.48.1",
+    "trafilatura>=2.0.0",
+    "wkhtmltopdf>=0.2",
+]

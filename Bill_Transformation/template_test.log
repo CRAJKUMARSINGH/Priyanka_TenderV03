@@ -1,0 +1,52 @@
+2025-08-14 14:39:09,141 - __main__ - INFO - ================================================================================
+2025-08-14 14:39:09,141 - __main__ - INFO - Starting Template Rendering Test
+2025-08-14 14:39:09,141 - __main__ - INFO - ================================================================================
+2025-08-14 14:39:09,141 - __main__ - INFO - Starting template rendering test...
+2025-08-14 14:39:09,141 - __main__ - INFO - Output directory: C:\Users\Rajkumar\Bill_Transformation\test_output
+2025-08-14 14:39:09,142 - __main__ - INFO - Initializing DocumentGeneratorV04...
+2025-08-14 14:39:09,143 - __main__ - INFO - Generating test data...
+2025-08-14 14:39:09,144 - __main__ - INFO - Test data created successfully
+2025-08-14 14:39:09,144 - __main__ - INFO - Generating documents...
+2025-08-14 14:39:09,163 - document_generator_v04 - ERROR - Error generating first_page HTML: 'dict object' has no attribute 'extra_items_base'
+2025-08-14 14:39:09,181 - document_generator_v04 - ERROR - Error generating deviation_statement HTML: 'dict object' has no attribute 'deviation_summary'
+2025-08-14 14:39:09,186 - document_generator_v04 - ERROR - Error generating extra_items HTML: type Undefined doesn't define __round__ method
+2025-08-14 14:39:09,188 - document_generator_v04 - INFO - Generated HTML: certificate_ii
+2025-08-14 14:39:09,195 - document_generator_v04 - ERROR - Error generating certificate_iii HTML: 'loop' is undefined
+2025-08-14 14:39:09,206 - document_generator_v04 - ERROR - Error generating note_sheet HTML: 'dict object' has no attribute 'actual_completion'
+2025-08-14 14:39:09,206 - document_generator_v04 - WARNING - Template not found: bill_template.html
+2025-08-14 14:39:09,206 - document_generator_v04 - WARNING - Template not found: last_page.html
+2025-08-14 14:39:09,235 - document_generator_v04 - INFO - Generated DOCX: first_page
+2025-08-14 14:39:09,261 - document_generator_v04 - INFO - Generated DOCX: bill_template
+2025-08-14 14:39:09,287 - document_generator_v04 - INFO - Generated DOCX: deviation_statement
+2025-08-14 14:39:09,312 - document_generator_v04 - INFO - Generated DOCX: extra_items
+2025-08-14 14:39:09,335 - document_generator_v04 - INFO - Generated DOCX: certificate_ii
+2025-08-14 14:39:09,359 - document_generator_v04 - INFO - Generated DOCX: certificate_iii
+2025-08-14 14:39:09,382 - document_generator_v04 - INFO - Generated DOCX: note_sheet
+2025-08-14 14:39:09,411 - document_generator_v04 - INFO - Generated DOCX: last_page
+2025-08-14 14:39:09,458 - document_generator_v04 - INFO - Generated combined DOCX document
+2025-08-14 14:39:09,458 - __main__ - INFO - Successfully generated 10 files:
+2025-08-14 14:39:09,459 - __main__ - INFO - - certificate_ii.html (3.05 KB)
+2025-08-14 14:39:09,459 - __main__ - INFO - - first_page.docx (36.05 KB)
+2025-08-14 14:39:09,459 - __main__ - INFO - - bill_template.docx (36.00 KB)
+2025-08-14 14:39:09,460 - __main__ - INFO - - deviation_statement.docx (36.00 KB)
+2025-08-14 14:39:09,460 - __main__ - INFO - - extra_items.docx (35.98 KB)
+2025-08-14 14:39:09,460 - __main__ - INFO - - certificate_ii.docx (35.99 KB)
+2025-08-14 14:39:09,460 - __main__ - INFO - - certificate_iii.docx (36.00 KB)
+2025-08-14 14:39:09,460 - __main__ - INFO - - note_sheet.docx (35.92 KB)
+2025-08-14 14:39:09,460 - __main__ - INFO - - last_page.docx (35.89 KB)
+2025-08-14 14:39:09,461 - __main__ - INFO - - combined_bill_document_v04.docx (36.80 KB)
+2025-08-14 14:39:09,461 - __main__ - INFO - 
+Output directory contents:
+2025-08-14 14:39:09,461 - __main__ - INFO - - bill_template.docx (36.00 KB)
+2025-08-14 14:39:09,461 - __main__ - INFO - - certificate_ii.docx (35.99 KB)
+2025-08-14 14:39:09,461 - __main__ - INFO - - certificate_ii.html (3.05 KB)
+2025-08-14 14:39:09,462 - __main__ - INFO - - certificate_iii.docx (36.00 KB)
+2025-08-14 14:39:09,462 - __main__ - INFO - - combined_bill_document_v04.docx (36.80 KB)
+2025-08-14 14:39:09,462 - __main__ - INFO - - deviation_statement.docx (36.00 KB)
+2025-08-14 14:39:09,462 - __main__ - INFO - - extra_items.docx (35.98 KB)
+2025-08-14 14:39:09,462 - __main__ - INFO - - first_page.docx (36.05 KB)
+2025-08-14 14:39:09,462 - __main__ - INFO - - last_page.docx (35.89 KB)
+2025-08-14 14:39:09,462 - __main__ - INFO - - note_sheet.docx (35.92 KB)
+2025-08-14 14:39:09,462 - __main__ - INFO - Template rendering test completed
+2025-08-14 14:39:09,462 - __main__ - INFO - ================================================================================
+2025-08-14 14:39:09,484 - __main__ - INFO - ================================================================================
