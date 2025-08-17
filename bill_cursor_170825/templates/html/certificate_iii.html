@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Certificate III - Final Acceptance</title>
+    <style>
+        @page { 
+            size: A4; 
+            margin: 15mm; 
+        }
+        * { 
+            box-sizing: border-box; 
+        }
+        body { 
+            font-family: Arial, sans-serif; 
+            font-size: 11pt; 
+            margin: 0; 
+            line-height: 1.4;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: linear-gradient(135deg, #4caf50, #388e3c);
+            color: white;
+            border-radius: 8px;
+        }
+        .header h1 { 
+            margin: 0 0 5px 0; 
+            font-size: 18pt; 
+            font-weight: bold;
+        }
+        .header p {
+            margin: 3px 0;
+            font-size: 12pt;
+        }
+        .certificate-body {
+            background: #ffffff;
+            border: 3px solid #4caf50;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .project-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 5px solid #4caf50;
+        }
+        .project-info p {
+            margin: 5px 0;
+            font-size: 10pt;
+        }
+        .acceptance-text {
+            text-align: justify;
+            margin: 20px 0;
+            padding: 15px;
+            background: #e8f5e9;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+        .financial-summary {
+            margin: 20px 0;
+        }
+        .financial-summary table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 10pt;
+        }
+        .financial-summary th, .financial-summary td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .financial-summary th {
+            background: #4caf50;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+        .amount-col {
+            text-align: right;
+            font-family: "Courier New", monospace;
+        }
+        .total-row {
+            background: #e8f5e9;
+            font-weight: bold;
+        }
+        .final-total-row {
+            background: #c8e6c9;
+            font-weight: bold;
+            font-size: 11pt;
+        }
+        .warranty-section {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ffb74d;
+        }
+        .warranty-section h4 {
+            margin-top: 0;
+            color: #ef6c00;
+        }
+        .compliance-checklist {
+            background: #f3e5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ba68c8;
+        }
+        .compliance-checklist h4 {
+            margin-top: 0;
+            color: #7b1fa2;
+        }
+        .check-item {
+            margin: 8px 0;
+            padding: 5px;
+        }
+        .checkbox {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #4caf50;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 12px;
+            font-weight: bold;
+            color: #4caf50;
+            background: white;
+        }
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #4caf50;
+        }
+        .signature-box {
+            text-align: center;
+            width: 45%;
+            border: 2px solid #4caf50;
+            padding: 30px 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .signature-line {
+            height: 50px;
+            border-bottom: 2px solid #333;
+            margin-bottom: 10px;
+        }
+        .final-seal {
+            margin-top: 20px;
+            text-align: center;
+            padding: 20px;
+            border: 2px dashed #4caf50;
+            background: #e8f5e9;
+            border-radius: 5px;
+        }
+        .acceptance-stamp {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 3px solid #4caf50;
+            border-radius: 50px;
+            background: white;
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 14pt;
+            margin: 10px;
+            transform: rotate(-15deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CERTIFICATE III</h1>
+        <p>Final Acceptance and Payment Authorization Certificate</p>
+        <p>Public Works Department, Government of Rajasthan</p>
+        <div class="acceptance-stamp">ACCEPTED</div>
+    </div>
+
+    <div class="certificate-body">
+        <div class="project-info">
+            <p><strong>Agreement No:</strong> {{ data.agreement_no }}</p>
+            <p><strong>Name of Work:</strong> {{ data.name_of_work }}</p>
+            <p><strong>Name of Firm/Contractor:</strong> {{ data.name_of_firm }}</p>
+            <p><strong>Contract Date:</strong> {{ data.date_commencement }}</p>
+            <p><strong>Completion Date:</strong> {{ data.actual_completion }}</p>
+            <p><strong>Final Acceptance Date:</strong> {{ data.certificate_date or data.generation_date }}</p>
+        </div>
+
+        <div class="acceptance-text">
+            <p><strong>I hereby certify and declare that:</strong></p>
+            
+            <p style="margin: 15px 0;">
+                The work described above has been <strong>completed in all respects</strong> and has been 
+                <strong>accepted by the department</strong> after thorough inspection and verification. 
+                The completed work is fully functional, meets all specified requirements, and is ready 
+                for immediate use and operation.
+            </p>
+            
+            <p style="margin: 15px 0;">
+                All <strong>technical specifications, quality standards, and safety requirements</strong> 
+                have been met satisfactorily. The contractor has fulfilled all contractual obligations 
+                including submission of required documentation, test certificates, operation manuals, 
+                and warranty undertakings.
+            </p>
+            
+            <p style="margin: 15px 0;">
+                The work has been executed within the approved specifications and the final cost is 
+                <strong>justified and reasonable</strong>. All quantities have been verified through 
+                proper measurement and the rates applied are as per approved schedule.
+            </p>
+            
+            <p style="margin: 15px 0;">
+                The contractor is hereby <strong>authorized for final payment</strong> as detailed in 
+                the financial summary below, subject to standard deductions and retentions as per contract terms.
+            </p>
+        </div>
+
+        <div class="financial-summary">
+            <h4 style="color: #4caf50; border-bottom: 2px solid #e8f5e9; padding-bottom: 5px;">Final Payment Authorization Summary</h4>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 60%;">Payment Category</th>
+                        <th style="width: 20%;">Amount (Rs.)</th>
+                        <th style="width: 20%;">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Main Work Items (Including Premium)</td>
+                        <td class="amount-col">{{ "%.2f"|format(data.bill_grand_total or 0) }}</td>
+                        <td style="color: #4caf50; font-weight: bold;">✓ Approved</td>
+                    </tr>
+                    {% if data.extra_items_sum and data.extra_items_sum > 0 %}
+                    <tr>
+                        <td>Extra Items (Including Premium)</td>
+                        <td class="amount-col">{{ "%.2f"|format(data.extra_items_sum or 0) }}</td>
+                        <td style="color: #4caf50; font-weight: bold;">✓ Approved</td>
+                    </tr>
+                    {% endif %}
+                    <tr class="total-row">
+                        <td><strong>Gross Amount Payable</strong></td>
+                        <td class="amount-col"><strong>{{ "%.2f"|format(data.total_amount or 0) }}</strong></td>
+                        <td style="color: #4caf50; font-weight: bold;">✓ Verified</td>
+                    </tr>
+                    <tr>
+                        <td>Less: Previous Payments (if any)</td>
+                        <td class="amount-col">0.00</td>
+                        <td style="color: #666;">N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Less: Retention Money (if applicable)</td>
+                        <td class="amount-col">{{ "%.2f"|format((data.total_amount or 0) * 0.05) }}</td>
+                        <td style="color: #ff9800; font-weight: bold;">Retained</td>
+                    </tr>
+                    <tr class="final-total-row">
+                        <td><strong>NET AMOUNT AUTHORIZED FOR PAYMENT</strong></td>
+                        <td class="amount-col"><strong>{{ "%.2f"|format((data.total_amount or 0) * 0.95) }}</strong></td>
+                        <td style="color: #4caf50; font-weight: bold;">✓ FINAL</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="compliance-checklist">
+            <h4>Final Compliance Verification</h4>
+            
+            <div class="check-item">
+                <span class="checkbox">✓</span>
+                <strong>Work Completion:</strong> All work items completed as per approved drawings and specifications
+            </div>
+            
+            <div class="check-item">
+                <span class="checkbox">✓</span>
+                <strong>Quality Assurance:</strong> Quality control tests completed with satisfactory results
+            </div>
+            
+            <div class="check-item">
+                <span class="checkbox">✓</span>
+                <strong>Safety Compliance:</strong> All safety regulations and protocols have been followed
+            </div>
+            
+            <div class="check-item">
+                <span class="checkbox">✓</span>
+                <strong>Environmental Clearance:</strong> No environmental violations and proper waste disposal
+            </div>
+            
+            <div class="check-item">
+                <span class="checkbox">✓</span>
+                <strong>Documentation:</strong> All required certificates, test reports, and manuals submitted
+            </div>
+            
+            <div class="check-item">
+                <span class="checkbox">✓</span>
+                <strong>Statutory Compliance:</strong> All statutory requirements and clearances obtained
+            </div>
+            
+            <div class="check-item">
+                <span class="checkbox">✓</span>
+                <strong>Financial Verification:</strong> All bills, vouchers, and financial documents verified
+            </div>
+        </div>
+
+        <div class="warranty-section">
+            <h4>Post-Completion Obligations</h4>
+            
+            <p><strong>Warranty Period:</strong> 12 months from the date of completion (or as per contract terms)</p>
+            <p><strong>Maintenance Responsibility:</strong> Contractor shall maintain the work during warranty period</p>
+            <p><strong>Defect Liability:</strong> Contractor liable to rectify any defects appearing during warranty period</p>
+            <p><strong>Performance Bond:</strong> Valid until warranty period completion</p>
+            
+            <div style="margin-top: 15px; padding: 10px; background: rgba(255,255,255,0.7); border-radius: 3px;">
+                <small>
+                    <strong>Note:</strong> Retention money will be released after successful completion 
+                    of warranty period and rectification of any defects, if found.
+                </small>
+            </div>
+        </div>
+
+        <div style="background: #e8f5e9; padding: 15px; border-radius: 5px; margin: 20px 0; border: 2px solid #4caf50;">
+            <h4 style="margin-top: 0; color: #2e7d32;">FINAL DECLARATION</h4>
+            <p style="margin: 10px 0; font-size: 12pt; text-align: center;">
+                <strong>This work is hereby ACCEPTED and the contractor is AUTHORIZED for final payment.</strong>
+            </p>
+            <p style="margin: 10px 0; text-align: center; color: #2e7d32;">
+                Subject to standard terms and conditions of the contract and department policies.
+            </p>
+        </div>
+    </div>
+
+    <div class="signatures">
+        <div class="signature-box">
+            <div class="signature-line"></div>
+            <strong>Superintending Engineer</strong><br>
+            <small>Name: _________________________</small><br>
+            <small>Date: _________________________</small><br>
+            <small>Circle: _______________________</small>
+        </div>
+        
+        <div class="signature-box">
+            <div class="signature-line"></div>
+            <strong>Chief Engineer / Additional Chief Engineer</strong><br>
+            <small>Name: _________________________</small><br>
+            <small>Date: _________________________</small><br>
+            <small>Department: ___________________</small>
+        </div>
+    </div>
+
+    <div class="final-seal">
+        <h4 style="margin-top: 0; color: #4caf50;">DEPARTMENTAL APPROVAL SEAL</h4>
+        <div style="width: 150px; height: 150px; border: 4px solid #4caf50; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: white; position: relative;">
+            <div style="text-align: center;">
+                <strong style="color: #4caf50; font-size: 14pt;">PWD</strong><br>
+                <strong style="color: #4caf50; font-size: 12pt;">RAJASTHAN</strong><br>
+                <small style="color: #4caf50;">FINAL APPROVAL</small>
+            </div>
+        </div>
+        <p style="margin: 15px 0 0 0; font-size: 9pt; color: #666;">
+            This certificate authorizes final payment and confirms departmental acceptance
+        </p>
+    </div>
+    
+    <div style="margin-top: 20px; text-align: center; font-size: 8pt; color: #666; border-top: 1px solid #eee; padding-top: 10px;">
+        Generated on {{ data.generation_date }} at {{ data.generation_time }}<br>
+        Infrastructure Billing System v2.0 - Final Acceptance Certificate<br>
+        <strong style="color: #4caf50;">Work accepted and authorized for final payment</strong>
+    </div>
+</body>
+</html>

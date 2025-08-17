@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contractor Bill - First Page</title>
+    <style>
+        @page { 
+            size: A4; 
+            margin: 10mm; 
+        }
+        * { 
+            box-sizing: border-box; 
+        }
+        body { 
+            font-family: Arial, sans-serif; 
+            font-size: 10pt; 
+            margin: 0; 
+            line-height: 1.2;
+        }
+        h1 { 
+            text-align: center; 
+            margin: 0 0 8px 0; 
+            font-size: 16pt; 
+            font-weight: bold;
+        }
+        .header-info {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+        .header-info p {
+            margin: 3px 0;
+            font-size: 10pt;
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            table-layout: fixed; 
+            font-size: 9pt;
+        }
+        thead { 
+            display: table-header-group; 
+        }
+        tr { 
+            break-inside: avoid; 
+        }
+        th, td { 
+            border: 1px solid #000; 
+            padding: 4px; 
+            text-align: left; 
+            vertical-align: top; 
+            word-wrap: break-word; 
+        }
+        th { 
+            background: #f0f0f0; 
+            text-align: center; 
+            font-weight: bold;
+        }
+        .amount-col {
+            text-align: right;
+        }
+        .total-row {
+            background: #e8f5e9;
+            font-weight: bold;
+        }
+        .grand-total-row {
+            background: #d4edda;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+        .extra-items-header {
+            background: #fff3cd;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>CONTRACTOR BILL</h1>
+    
+    <div class="header-info">
+        {% if data.header %}
+            {% for row in data.header %}
+                {% if row|length > 0 %}
+                    <p>
+                    {% for item in row %}
+                        {% if item|trim %}
+                            {% set trimmed = item|trim %}
+                            {% if trimmed|length >= 10 and trimmed[4:5] == '-' and trimmed[7:8] == '-' and trimmed[:4]|int > 0 and trimmed[5:7]|int > 0 and trimmed[8:10]|int > 0 %}
+                                {{ trimmed[8:10] }}/{{ trimmed[5:7] }}/{{ trimmed[:4] }}
+                            {% else %}
+                                {{ trimmed }}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    </p>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p><strong>Agreement No:</strong> {{ data.agreement_no }}</p>
+            <p><strong>Name of Work:</strong> {{ data.name_of_work }}</p>
+            <p><strong>Name of Firm:</strong> {{ data.name_of_firm }}</p>
+            <p><strong>Date of Commencement:</strong> {{ data.date_commencement }}</p>
+            <p><strong>Schedule Date of Completion:</strong> {{ data.date_completion }}</p>
+            <p><strong>Actual Date of Completion:</strong> {{ data.actual_completion }}</p>
+        {% endif %}
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2" style="width: 8%;">Item No.</th>
+                <th rowspan="2" style="width: 35%;">Item of Work supplies<br>(Grouped under "sub-head" and "sub work" of estimate)</th>
+                <th rowspan="2" style="width: 8%;">Unit</th>
+                <th colspan="2" style="width: 24%;">Quantity executed (or supplied)</th>
+                <th rowspan="2" style="width: 12%;">Rate</th>
+                <th rowspan="2" style="width: 13%;">Amount upto date</th>
+                <th rowspan="2" style="width: 10%;">Amount Since previous bill<br>(Total for each sub-head)</th>
+                <th rowspan="2" style="width: 10%;">Remark</th>
+            </tr>
+            <tr>
+                <th style="width: 12%;">upto date as per MB</th>
+                <th style="width: 12%;">since last certificate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data.bill_items %}
+            <tr>
+                <td>{{ item.item_no or item.serial_no or '' }}</td>
+                <td>{{ item.description or '' }}</td>
+                <td>{{ item.unit or '' }}</td>
+                <td class="amount-col">{{ "%.2f"|format(item.quantity_mb or item.quantity or 0) }}</td>
+                <td class="amount-col">{{ "%.2f"|format(item.quantity_since_last or 0) }}</td>
+                <td class="amount-col">{{ "%.2f"|format(item.rate or 0) }}</td>
+                <td class="amount-col">{{ "%.2f"|format(item.amount or 0) }}</td>
+                <td class="amount-col">{{ "%.2f"|format(item.amount_since_last or 0) }}</td>
+                <td>{{ item.remark or item.remarks or '' }}</td>
+            </tr>
+            {% endfor %}
+            
+            <!-- Main Items Totals -->
+            <tr class="total-row">
+                <td colspan="6"><strong>Main Items Total Rs.</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.bill_total or 0) }}</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.bill_total_since_last or 0) }}</strong></td>
+                <td></td>
+            </tr>
+            
+            <tr class="total-row">
+                <td colspan="6"><strong>Tender Premium @ {{ "%.1f"|format((data.tender_premium_percent or 0.10) * 100) }}%</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.bill_premium or 0) }}</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.bill_premium_since_last or 0) }}</strong></td>
+                <td></td>
+            </tr>
+            
+            <tr class="grand-total-row">
+                <td colspan="6"><strong>Main Items Grand Total Rs.</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.bill_grand_total or 0) }}</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.bill_grand_total_since_last or 0) }}</strong></td>
+                <td></td>
+            </tr>
+            
+            {% if data.extra_items and data.extra_items|length > 0 %}
+            <!-- Extra Items Section -->
+            <tr class="extra-items-header">
+                <td colspan="9"><strong>EXTRA ITEMS</strong></td>
+            </tr>
+            
+            {% for item in data.extra_items %}
+            <tr>
+                <td>{{ item.item_no or item.serial_no or '' }}</td>
+                <td>{{ item.description or '' }}</td>
+                <td>{{ item.unit or '' }}</td>
+                <td class="amount-col">{{ "%.2f"|format(item.quantity_mb or item.quantity or 0) }}</td>
+                <td class="amount-col">{{ "%.2f"|format(item.quantity_since_last or 0) }}</td>
+                <td class="amount-col">{{ "%.2f"|format(item.rate or 0) }}</td>
+                <td class="amount-col">{{ "%.2f"|format(item.amount or 0) }}</td>
+                <td class="amount-col">{{ "%.2f"|format(item.amount_since_last or 0) }}</td>
+                <td>{{ item.remark or item.remarks or '' }}</td>
+            </tr>
+            {% endfor %}
+            
+            <tr class="total-row">
+                <td colspan="6"><strong>Extra Items Total Rs.</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.extra_items_total or 0) }}</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.extra_items_total_since_last or 0) }}</strong></td>
+                <td></td>
+            </tr>
+            
+            <tr class="total-row">
+                <td colspan="6"><strong>Tender Premium @ {{ "%.1f"|format((data.tender_premium_percent or 0.10) * 100) }}%</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.extra_premium or 0) }}</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.extra_premium_since_last or 0) }}</strong></td>
+                <td></td>
+            </tr>
+            
+            <tr class="grand-total-row">
+                <td colspan="6"><strong>Extra Items Grand Total Rs.</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.extra_items_sum or 0) }}</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.extra_items_sum_since_last or 0) }}</strong></td>
+                <td></td>
+            </tr>
+            {% endif %}
+            
+            <!-- Final Total -->
+            <tr class="grand-total-row" style="background: #c8e6c9; font-size: 11pt;">
+                <td colspan="6"><strong>TOTAL PAYABLE AMOUNT Rs.</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.total_amount or 0) }}</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.total_amount_since_last or 0) }}</strong></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div style="margin-top: 20px; text-align: center; font-size: 8pt; color: #666;">
+        Generated on {{ data.generation_date }} at {{ data.generation_time }}<br>
+        Infrastructure Billing System v2.0 - Election Commission Compliant
+    </div>
+</body>
+</html>

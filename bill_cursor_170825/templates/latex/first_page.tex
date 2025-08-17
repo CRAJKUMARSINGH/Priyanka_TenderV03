@@ -1,0 +1,202 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+% Page setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\textbf{Public Works Department, Government of Rajasthan}}
+\fancyfoot[C]{Page \thepage}
+\fancyfoot[R]{Infrastructure Billing System v2.0}
+
+% Custom commands
+\newcommand{\rupees}[1]{₹\,#1}
+\newcommand{\inwords}[1]{\textit{(Rupees #1 only)}}
+
+% Colors for Election Commission compliance
+\definecolor{headerblue}{RGB}{25,118,210}
+\definecolor{lightgray}{RGB}{245,245,245}
+
+\begin{document}
+
+% Title section with Election Commission compliance
+\begin{center}
+    {\Huge\textbf{\textcolor{headerblue}{CONTRACTOR BILL}}}\\[0.8cm]
+    {\Large\textbf{First Page Summary}}\\[0.5cm]
+    {\large Election Commission Compliant Format}\\[0.3cm]
+    \rule{\textwidth}{2pt}\\[1cm]
+\end{center}
+
+% Project information in a box
+\begin{center}
+\fbox{\begin{minipage}{0.9\textwidth}
+\begin{tabular}{@{}ll@{}}
+\textbf{Agreement No:} & \VAR{data.agreement_no} \\[0.3cm]
+\textbf{Name of Work:} & \parbox[t]{10cm}{\VAR{data.name_of_work}} \\[0.3cm]
+\textbf{Name of Firm:} & \VAR{data.name_of_firm} \\[0.3cm]
+\textbf{Date of Commencement:} & \VAR{data.date_commencement} \\[0.3cm]
+\textbf{Schedule Date of Completion:} & \VAR{data.date_completion} \\[0.3cm]
+\textbf{Actual Date of Completion:} & \VAR{data.actual_completion} \\[0.3cm]
+\end{tabular}
+\end{minipage}}
+\end{center}
+
+\vspace{1cm}
+
+% Main items table
+\BLOCK{if data.bill_items}
+\section*{Work Items Executed}
+
+\begin{longtable}{|p{1.2cm}|p{5.5cm}|p{1.2cm}|p{1.8cm}|p{1.8cm}|p{2.2cm}|p{1.8cm}|}
+\hline
+\rowcolor{lightgray}
+\textbf{Item No.} & \textbf{Description of Work} & \textbf{Unit} & \textbf{Quantity} & \textbf{Rate} & \textbf{Amount} & \textbf{Remarks} \\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor{lightgray}
+\textbf{Item No.} & \textbf{Description of Work} & \textbf{Unit} & \textbf{Quantity} & \textbf{Rate} & \textbf{Amount} & \textbf{Remarks} \\
+\hline
+\endhead
+
+\hline
+\multicolumn{7}{|r|}{\textit{Continued on next page}} \\
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+\BLOCK{for item in data.bill_items}
+\VAR{item.item_no or item.serial_no or ''} & 
+\parbox[t]{5.5cm}{\VAR{item.description or ''}} & 
+\VAR{item.unit or ''} & 
+\VAR{"%.2f"|format(item.quantity_bill or item.quantity or 0)} & 
+\VAR{"%.2f"|format(item.rate or 0)} & 
+\VAR{"%.2f"|format(item.amount or 0)} & 
+\VAR{item.remark or item.remarks or ''} \\
+\hline
+\BLOCK{endfor}
+
+% Main Items Totals
+\rowcolor{lightgray}
+\multicolumn{6}{|r|}{\textbf{Main Items Total Rs.:}} & \textbf{\rupees{\VAR{"%.2f"|format(data.bill_total or 0)}}} \\
+\hline
+
+\rowcolor{lightgray}
+\multicolumn{6}{|r|}{\textbf{Tender Premium @ \VAR{"%.1f"|format((data.tender_premium_percent or 0) * 100)}\%:}} & \textbf{\rupees{\VAR{"%.2f"|format(data.bill_premium or 0)}}} \\
+\hline
+
+\rowcolor{lightgray}
+\multicolumn{6}{|r|}{\textbf{Main Items Grand Total Rs.:}} & \textbf{\rupees{\VAR{"%.2f"|format(data.bill_grand_total or 0)}}} \\
+\hline
+
+\end{longtable}
+\BLOCK{endif}
+
+% Extra items section
+\BLOCK{if data.extra_items and data.extra_items|length > 0}
+\vspace{1cm}
+\section*{Extra Items}
+
+\begin{longtable}{|p{1.2cm}|p{5.5cm}|p{1.2cm}|p{1.8cm}|p{1.8cm}|p{2.2cm}|p{1.8cm}|}
+\hline
+\rowcolor{orange!20}
+\textbf{Item No.} & \textbf{Description of Extra Work} & \textbf{Unit} & \textbf{Quantity} & \textbf{Rate} & \textbf{Amount} & \textbf{Approval} \\
+\hline
+
+\BLOCK{for item in data.extra_items}
+\VAR{item.item_no or item.serial_no or 'E-' + loop.index|string} & 
+\parbox[t]{5.5cm}{\VAR{item.description or ''}} & 
+\VAR{item.unit or ''} & 
+\VAR{"%.2f"|format(item.quantity or 0)} & 
+\VAR{"%.2f"|format(item.rate or 0)} & 
+\VAR{"%.2f"|format(item.amount or 0)} & 
+\VAR{item.approval_ref or '\_\_\_\_\_\_'} \\
+\hline
+\BLOCK{endfor}
+
+\rowcolor{orange!20}
+\multicolumn{5}{|r|}{\textbf{Extra Items Total Rs.:}} & \textbf{\rupees{\VAR{"%.2f"|format(data.extra_items_total or 0)}}} & \\
+\hline
+
+\rowcolor{orange!20}
+\multicolumn{5}{|r|}{\textbf{Tender Premium @ \VAR{"%.1f"|format((data.tender_premium_percent or 0) * 100)}\%:}} & \textbf{\rupees{\VAR{"%.2f"|format(data.extra_premium or 0)}}} & \\
+\hline
+
+\rowcolor{orange!20}
+\multicolumn{5}{|r|}{\textbf{Extra Items Grand Total Rs.:}} & \textbf{\rupees{\VAR{"%.2f"|format(data.extra_items_sum or 0)}}} & \\
+\hline
+
+\end{longtable}
+\BLOCK{endif}
+
+% Final total section
+\vspace{1cm}
+\begin{center}
+\fbox{\begin{minipage}{0.6\textwidth}
+\begin{center}
+{\Large\textbf{TOTAL PAYABLE AMOUNT}}\\[0.5cm]
+{\Huge\textcolor{headerblue}{\textbf{\rupees{\VAR{"%.2f"|format(data.total_amount or 0)}}}}}\\[0.3cm]
+\BLOCK{if data.total_amount}
+\inwords{\VAR{data.total_amount|int} and \VAR{"%.0f"|format((data.total_amount % 1) * 100)} paise}
+\BLOCK{endif}
+\end{center}
+\end{minipage}}
+\end{center}
+
+% Summary box
+\vspace{1cm}
+\begin{center}
+\fbox{\begin{minipage}{0.8\textwidth}
+\begin{center}
+\textbf{PAYMENT SUMMARY}
+\end{center}
+\begin{tabular}{lr}
+Main Work Items (with Premium): & \rupees{\VAR{"%.2f"|format(data.bill_grand_total or 0)}} \\
+\BLOCK{if data.extra_items_sum and data.extra_items_sum > 0}
+Extra Items (with Premium): & \rupees{\VAR{"%.2f"|format(data.extra_items_sum or 0)}} \\
+\BLOCK{endif}
+\hline
+\textbf{TOTAL AMOUNT:} & \textbf{\rupees{\VAR{"%.2f"|format(data.total_amount or 0)}}} \\
+\end{tabular}
+\end{minipage}}
+\end{center}
+
+% Certification section
+\vspace{2cm}
+\begin{center}
+\textbf{CONTRACTOR CERTIFICATION}
+\end{center}
+
+\vspace{1cm}
+I certify that the work described above has been completed in accordance with the contract specifications and the quantities shown are accurate.
+
+\vspace{1.5cm}
+\begin{tabular}{p{6cm}p{6cm}}
+\rule{5cm}{0.5pt} & \rule{5cm}{0.5pt} \\
+Contractor's Signature & Date \\
+\VAR{data.name_of_firm} & \\
+\end{tabular}
+
+% Footer
+\vspace{2cm}
+\begin{center}
+\rule{\textwidth}{1pt}\\
+\small
+Generated on \VAR{data.generation_date} at \VAR{data.generation_time}\\
+Election Commission Compliant Format - Infrastructure Billing System v2.0\\
+\textbf{This document is for official use and requires proper authorization}
+\end{center}
+
+\end{document}

@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 import os
 import tempfile
 import zipfile
@@ -9,7 +8,7 @@ import traceback
 import openpyxl
 from excel_processor_v01 import ExcelProcessorV01
 from document_generator_v04 import DocumentGeneratorV04
-from custom_utils.utils import setup_wkhtmltopdf, resolve_logo_url
+from custom_utils.utils import setup_wkhtmltopdf
 
 # Page setup
 st.set_page_config(
@@ -18,21 +17,19 @@ st.set_page_config(
     layout="wide"
 )
 
+
 def main():
     st.title("📋 Advanced Bill Generator V04")
     st.markdown("Professional contractor billing and document generation system")
-    
     # Sidebar for configuration
     with st.sidebar:
         st.header("⚙️ Configuration")
-        
         # Output format selection
         st.subheader("Output Formats")
         generate_html = st.checkbox("HTML Documents", value=True)
         generate_pdf = st.checkbox("PDF Documents", value=True)
         generate_docx = st.checkbox("DOCX Documents", value=True)
         generate_latex = st.checkbox("LaTeX Documents", value=False)
-        
         # Font configuration
         st.subheader("Display Options")
         reverse_font = st.checkbox("Reverse Font Colors", value=False)

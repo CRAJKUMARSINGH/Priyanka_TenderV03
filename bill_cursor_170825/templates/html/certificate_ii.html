@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Certificate II - Work Completion</title>
+    <style>
+        @page { 
+            size: A4; 
+            margin: 15mm; 
+        }
+        * { 
+            box-sizing: border-box; 
+        }
+        body { 
+            font-family: Arial, sans-serif; 
+            font-size: 11pt; 
+            margin: 0; 
+            line-height: 1.4;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: linear-gradient(135deg, #1e88e5, #1565c0);
+            color: white;
+            border-radius: 8px;
+        }
+        .header h1 { 
+            margin: 0 0 5px 0; 
+            font-size: 18pt; 
+            font-weight: bold;
+        }
+        .header p {
+            margin: 3px 0;
+            font-size: 12pt;
+        }
+        .certificate-body {
+            background: #ffffff;
+            border: 3px solid #1565c0;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .project-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 5px solid #1565c0;
+        }
+        .project-info p {
+            margin: 5px 0;
+            font-size: 10pt;
+        }
+        .certification-text {
+            text-align: justify;
+            margin: 20px 0;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+        .work-details {
+            margin: 20px 0;
+        }
+        .work-details table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 10pt;
+        }
+        .work-details th, .work-details td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .work-details th {
+            background: #1e88e5;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+        .amount-col {
+            text-align: right;
+            font-family: "Courier New", monospace;
+        }
+        .total-row {
+            background: #e3f2fd;
+            font-weight: bold;
+        }
+        .verification-checklist {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #4caf50;
+        }
+        .verification-checklist h4 {
+            margin-top: 0;
+            color: #2e7d32;
+        }
+        .check-item {
+            margin: 8px 0;
+            padding: 5px;
+        }
+        .checkbox {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #1565c0;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 12px;
+            font-weight: bold;
+            color: #1565c0;
+            background: white;
+        }
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #1565c0;
+        }
+        .signature-box {
+            text-align: center;
+            width: 45%;
+            border: 2px solid #1565c0;
+            padding: 30px 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .signature-line {
+            height: 50px;
+            border-bottom: 2px solid #333;
+            margin-bottom: 10px;
+        }
+        .seal-box {
+            margin-top: 20px;
+            text-align: center;
+            padding: 20px;
+            border: 2px dashed #1565c0;
+            background: #e3f2fd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CERTIFICATE II</h1>
+        <p>Work Completion and Quality Assurance Certificate</p>
+        <p>Public Works Department, Government of Rajasthan</p>
+    </div>
+
+    <div class="certificate-body">
+        <div class="project-info">
+            <p><strong>Agreement No:</strong> {{ data.agreement_no }}</p>
+            <p><strong>Name of Work:</strong> {{ data.name_of_work }}</p>
+            <p><strong>Name of Firm/Contractor:</strong> {{ data.name_of_firm }}</p>
+            <p><strong>Contract Date:</strong> {{ data.date_commencement }}</p>
+            <p><strong>Scheduled Completion:</strong> {{ data.date_completion }}</p>
+            <p><strong>Actual Completion:</strong> {{ data.actual_completion }}</p>
+            <p><strong>Certificate Date:</strong> {{ data.certificate_date or data.generation_date }}</p>
+        </div>
+
+        <div class="certification-text">
+            <p><strong>I hereby certify that:</strong></p>
+            
+            <p style="margin: 15px 0;">
+                The above mentioned work has been <strong>completed in all respects</strong> in accordance with the 
+                specifications, drawings, and conditions of contract. The work has been executed to our complete 
+                satisfaction and meets all the quality standards and technical specifications as laid down in 
+                the tender documents.
+            </p>
+            
+            <p style="margin: 15px 0;">
+                The quantities of work executed have been <strong>measured and verified</strong> as per approved 
+                measurement procedures and are found to be accurate and in accordance with the approved 
+                drawings and technical specifications.
+            </p>
+            
+            <p style="margin: 15px 0;">
+                All materials used in the execution of work are of <strong>approved quality</strong> and conform 
+                to the specifications mentioned in the contract. The workmanship is of <strong>acceptable standard</strong> 
+                and the completed work is ready for intended use.
+            </p>
+        </div>
+
+        <div class="work-details">
+            <h4 style="color: #1565c0; border-bottom: 2px solid #e3f2fd; padding-bottom: 5px;">Work Completion Summary</h4>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 50%;">Work Category</th>
+                        <th style="width: 25%;">Contract Value (Rs.)</th>
+                        <th style="width: 25%;">Completed Value (Rs.)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Main Work Items</td>
+                        <td class="amount-col">{{ "%.2f"|format(data.bill_grand_total or 0) }}</td>
+                        <td class="amount-col">{{ "%.2f"|format(data.bill_grand_total or 0) }}</td>
+                    </tr>
+                    {% if data.extra_items_sum and data.extra_items_sum > 0 %}
+                    <tr>
+                        <td>Extra Items (Approved)</td>
+                        <td class="amount-col">{{ "%.2f"|format(data.extra_items_sum or 0) }}</td>
+                        <td class="amount-col">{{ "%.2f"|format(data.extra_items_sum or 0) }}</td>
+                    </tr>
+                    {% endif %}
+                    <tr class="total-row">
+                        <td><strong>Total Work Completed</strong></td>
+                        <td class="amount-col"><strong>{{ "%.2f"|format(data.total_amount or 0) }}</strong></td>
+                        <td class="amount-col"><strong>{{ "%.2f"|format(data.total_amount or 0) }}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="verification-checklist">
+            <h4>Technical Verification Checklist</h4>
+            
+            <div class="check-item">
+                <span class="checkbox">✓</span>
+                <strong>Structural Integrity:</strong> All structural elements are properly executed and stable
+            </div>
+            
+            <div class="check-item">
+                <span class="checkbox">✓</span>
+                <strong>Material Quality:</strong> All materials used are as per approved specifications
+            </div>
+            
+            <div class="check-item">
+                <span class="checkbox">✓</span>
+                <strong>Workmanship Quality:</strong> Work executed meets professional standards and specifications
+            </div>
+            
+            <div class="check-item">
+                <span class="checkbox">✓</span>
+                <strong>Dimensional Accuracy:</strong> All dimensions are within acceptable tolerances
+            </div>
+            
+            <div class="check-item">
+                <span class="checkbox">✓</span>
+                <strong>Safety Compliance:</strong> All safety norms and regulations have been followed
+            </div>
+            
+            <div class="check-item">
+                <span class="checkbox">✓</span>
+                <strong>Environmental Clearance:</strong> Work completed without environmental violations
+            </div>
+            
+            <div class="check-item">
+                <span class="checkbox">✓</span>
+                <strong>Drawing Compliance:</strong> Work executed as per approved drawings and modifications
+            </div>
+            
+            <div class="check-item">
+                <span class="checkbox">✓</span>
+                <strong>Testing & QC:</strong> All required tests completed with satisfactory results
+            </div>
+        </div>
+
+        <div style="background: #fff3e0; padding: 15px; border-radius: 5px; margin: 20px 0; border: 1px solid #ffb74d;">
+            <h4 style="margin-top: 0; color: #e65100;">Final Assessment</h4>
+            <p style="margin: 10px 0; font-size: 12pt;">
+                <strong>Work Status:</strong> {{ data.work_status or "Completed as per specifications" }}
+            </p>
+            <p style="margin: 10px 0; font-size: 12pt;">
+                <strong>Quality Status:</strong> {{ data.quality_status or "Approved and accepted" }}
+            </p>
+            <p style="margin: 10px 0; font-size: 12pt;">
+                <strong>Recommendation:</strong> The work is recommended for final acceptance and payment.
+            </p>
+        </div>
+    </div>
+
+    <div class="signatures">
+        <div class="signature-box">
+            <div class="signature-line"></div>
+            <strong>Junior Engineer / Assistant Engineer</strong><br>
+            <small>Name: _________________________</small><br>
+            <small>Date: _________________________</small><br>
+            <small>Registration No: _______________</small>
+        </div>
+        
+        <div class="signature-box">
+            <div class="signature-line"></div>
+            <strong>Executive Engineer</strong><br>
+            <small>Name: _________________________</small><br>
+            <small>Date: _________________________</small><br>
+            <small>Registration No: _______________</small>
+        </div>
+    </div>
+
+    <div class="seal-box">
+        <h4 style="margin-top: 0; color: #1565c0;">OFFICIAL SEAL</h4>
+        <div style="width: 120px; height: 120px; border: 3px solid #1565c0; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: white;">
+            <strong style="color: #1565c0;">PWD<br>SEAL</strong>
+        </div>
+        <p style="margin: 10px 0 0 0; font-size: 9pt; color: #666;">
+            This certificate is digitally generated and requires official seal for validation
+        </p>
+    </div>
+    
+    <div style="margin-top: 20px; text-align: center; font-size: 8pt; color: #666; border-top: 1px solid #eee; padding-top: 10px;">
+        Generated on {{ data.generation_date }} at {{ data.generation_time }}<br>
+        Infrastructure Billing System v2.0 - Work Completion Certificate<br>
+        <strong>This certificate certifies successful completion of infrastructure work</strong>
+    </div>
+</body>
+</html>

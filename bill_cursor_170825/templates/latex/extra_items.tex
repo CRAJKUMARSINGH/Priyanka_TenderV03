@@ -1,0 +1,259 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{enumitem}
+
+% Page setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\textbf{Public Works Department, Government of Rajasthan}}
+\fancyfoot[C]{Page \thepage}
+\fancyfoot[R]{Extra Items Statement}
+
+% Custom commands
+\newcommand{\rupees}[1]{₹\,#1}
+\newcommand{\checkbox}{\makebox[1em]{$\square$}}
+
+% Colors
+\definecolor{headerred}{RGB}{211,47,47}
+\definecolor{warningamber}{RGB}{255,193,7}
+\definecolor{approvedgreen}{RGB}{76,175,80}
+\definecolor{lightgray}{RGB}{245,245,245}
+
+\begin{document}
+
+% Title section
+\begin{center}
+    {\Huge\textbf{\textcolor{headerred}{EXTRA ITEMS STATEMENT}}}\\[0.8cm]
+    {\Large\textbf{Additional Work Items Beyond Original Contract}}\\[0.5cm]
+    {\large Election Commission Compliant Format}\\[0.3cm]
+    \rule{\textwidth}{2pt}\\[1cm]
+\end{center}
+
+% Project information
+\begin{center}
+\fbox{\begin{minipage}{0.9\textwidth}
+\begin{tabular}{@{}ll@{}}
+\textbf{Agreement No:} & \VAR{data.agreement_no} \\[0.3cm]
+\textbf{Name of Work:} & \parbox[t]{10cm}{\VAR{data.name_of_work}} \\[0.3cm]
+\textbf{Name of Firm:} & \VAR{data.name_of_firm} \\[0.3cm]
+\textbf{Statement Date:} & \VAR{data.generation_date} \\[0.3cm]
+\end{tabular}
+\end{minipage}}
+\end{center}
+
+\vspace{1cm}
+
+\BLOCK{if data.has_extra_items and data.extra_items and data.extra_items|length > 0}
+
+% Important Notice
+\begin{center}
+\colorbox{warningamber!20}{\begin{minipage}{0.9\textwidth}
+\begin{center}
+\textcolor{headerred}{\textbf{⚠ IMPORTANT NOTICE}}
+\end{center}
+\vspace{0.3cm}
+\textbf{Extra Items Identified:} \VAR{data.extra_items_count} additional work items have been identified and executed beyond the original work order.
+
+\textbf{Administrative Approval:} All extra items must have proper administrative approval before execution and payment.
+
+\textbf{Rate Justification:} Rates for extra items should be justified as per prevailing market rates or approved schedule.
+\end{minipage}}
+\end{center}
+
+\vspace{1cm}
+
+% Extra Items Table
+\section*{Details of Extra Items}
+
+\begin{longtable}{|p{1.2cm}|p{5cm}|p{1cm}|p{1.5cm}|p{1.5cm}|p{2cm}|p{1.5cm}|}
+\hline
+\rowcolor{warningamber!30}
+\textbf{Item No.} & \textbf{Description of Extra Work} & \textbf{Unit} & \textbf{Quantity} & \textbf{Rate} & \textbf{Amount} & \textbf{Approval Ref.} \\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor{warningamber!30}
+\textbf{Item No.} & \textbf{Description of Extra Work} & \textbf{Unit} & \textbf{Quantity} & \textbf{Rate} & \textbf{Amount} & \textbf{Approval Ref.} \\
+\hline
+\endhead
+
+\hline
+\multicolumn{7}{|r|}{\textit{Continued on next page}} \\
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+\BLOCK{for item in data.extra_items}
+\VAR{item.item_no or item.serial_no or 'E-' + loop.index|string} & 
+\parbox[t]{5cm}{\VAR{item.description or ''}} & 
+\VAR{item.unit or ''} & 
+\VAR{"%.2f"|format(item.quantity or 0)} & 
+\VAR{"%.2f"|format(item.rate or 0)} & 
+\VAR{"%.2f"|format(item.amount or 0)} & 
+\VAR{item.approval_ref or '\_\_\_\_\_\_\_'} \\
+\hline
+\BLOCK{endfor}
+
+\rowcolor{warningamber!20}
+\multicolumn{5}{|r|}{\textbf{Extra Items Total Rs.:}} & \textbf{\rupees{\VAR{"%.2f"|format(data.extra_items_total or 0)}}} & \\
+\hline
+
+\rowcolor{warningamber!20}
+\multicolumn{5}{|r|}{\textbf{Tender Premium @ \VAR{"%.1f"|format((data.tender_premium_percent or 0.10) * 100)}\%:}} & \textbf{\rupees{\VAR{"%.2f"|format(data.extra_premium or 0)}}} & \\
+\hline
+
+\rowcolor{warningamber!30}
+\multicolumn{5}{|r|}{\textbf{EXTRA ITEMS GRAND TOTAL Rs.:}} & \textbf{\rupees{\VAR{"%.2f"|format(data.extra_items_sum or 0)}}} & \\
+\hline
+
+\end{longtable}
+
+% Administrative Approval Details
+\vspace{1cm}
+\section*{Administrative Approval Details}
+
+\begin{center}
+\fbox{\begin{minipage}{0.9\textwidth}
+\begin{center}
+\textbf{\textcolor{headerred}{APPROVAL REQUIREMENTS}}
+\end{center}
+
+\begin{tabular}{|l|l|}
+\hline
+\rowcolor{lightgray}
+\textbf{Approval Parameter} & \textbf{Details} \\
+\hline
+Total Extra Items Value & \rupees{\VAR{"%.2f"|format(data.extra_items_sum or 0)}} \\
+\hline
+\% of Original Contract & 
+\BLOCK{if data.bill_total and data.bill_total > 0}
+\VAR{"%.1f"|format((data.extra_items_sum or 0) / data.bill_total * 100)}\%
+\BLOCK{else}
+N/A
+\BLOCK{endif} \\
+\hline
+Approving Authority Required & 
+\BLOCK{set extra_percent = (data.extra_items_sum or 0) / (data.bill_total or 1) * 100}
+\BLOCK{if extra_percent > 25}
+Higher Authority (>25\% of contract value)
+\BLOCK{elif extra_percent > 10}
+Departmental Head (10-25\% of contract value)
+\BLOCK{else}
+Executive Engineer (≤10\% of contract value)
+\BLOCK{endif} \\
+\hline
+Approval Status & \checkbox Approved \quad \checkbox Pending \quad \checkbox Conditional \\
+\hline
+\end{tabular}
+\end{minipage}}
+\end{center}
+
+% Justification Section
+\vspace{1cm}
+\section*{Justification for Extra Items}
+
+\begin{center}
+\fbox{\begin{minipage}{0.9\textwidth}
+\textbf{\textcolor{headerred}{REASON FOR EXTRA WORK}}
+
+\vspace{0.5cm}
+\checkbox \textbf{Site Conditions:} Unforeseen site conditions necessitated additional work
+
+\checkbox \textbf{Design Changes:} Engineering design modifications during execution
+
+\checkbox \textbf{Quality Enhancement:} Additional work for quality improvement
+
+\checkbox \textbf{Client Request:} Additional scope requested by client
+
+\checkbox \textbf{Regulatory Compliance:} Work required for regulatory compliance
+
+\vspace{0.5cm}
+\textbf{Detailed Justification:}\\
+\rule{\textwidth}{0.5pt}\\[0.3cm]
+\rule{\textwidth}{0.5pt}\\[0.3cm]
+\rule{\textwidth}{0.5pt}\\[0.3cm]
+\rule{\textwidth}{0.5pt}
+\end{minipage}}
+\end{center}
+
+\BLOCK{else}
+
+% No Extra Items Section
+\vspace{2cm}
+\begin{center}
+\colorbox{approvedgreen!20}{\begin{minipage}{0.7\textwidth}
+\begin{center}
+{\Large\textcolor{approvedgreen}{\textbf{✓ NO EXTRA ITEMS}}}\\[1cm]
+{\large\textbf{Work Completed as per Original Contract}}\\[0.5cm]
+\end{center}
+
+All work has been executed strictly according to the original work order without any additional items.
+
+This demonstrates excellent project planning and execution control.
+
+\vspace{0.5cm}
+\begin{center}
+\textbf{Original Contract Value:} \rupees{\VAR{"%.2f"|format(data.bill_grand_total or 0)}}\\
+\textbf{Extra Items Value:} \rupees{0.00} (0\% variation)
+\end{center}
+\end{minipage}}
+\end{center}
+
+\BLOCK{endif}
+
+% Signature Section
+\vspace{2cm}
+\section*{Certification and Approval}
+
+\begin{center}
+\begin{tabular}{p{6cm}p{6cm}}
+\rule{5cm}{0.5pt} & \rule{5cm}{0.5pt} \\
+\textbf{Contractor} & \textbf{Date} \\
+\VAR{data.name_of_firm} & \\
+\rule{5cm}{0.5pt} & \\
+Signature & \\[1.5cm]
+
+\rule{5cm}{0.5pt} & \rule{5cm}{0.5pt} \\
+\textbf{Engineer-in-Charge} & \textbf{Date} \\
+Name \& Designation & \\
+\rule{5cm}{0.5pt} & \\
+Signature & \\[1.5cm]
+
+\BLOCK{if data.has_extra_items}
+\rule{5cm}{0.5pt} & \rule{5cm}{0.5pt} \\
+\textbf{Approving Authority} & \textbf{Date} \\
+Name \& Designation & \\
+\rule{5cm}{0.5pt} & \\
+Signature & \\
+\BLOCK{endif}
+\end{tabular}
+\end{center}
+
+% Footer
+\vspace{2cm}
+\begin{center}
+\rule{\textwidth}{1pt}\\
+\small
+Generated on \VAR{data.generation_date} at \VAR{data.generation_time}\\
+Election Commission Compliant Format - Extra Items Statement\\
+\BLOCK{if data.has_extra_items}
+\textcolor{headerred}{\textbf{Administrative approval required before payment}}
+\BLOCK{else}
+\textcolor{approvedgreen}{\textbf{No extra items - Contract executed as planned}}
+\BLOCK{endif}
+\end{center}
+
+\end{document}

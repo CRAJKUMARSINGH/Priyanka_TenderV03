@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extra Items Statement</title>
+    <style>
+        @page { 
+            size: A4; 
+            margin: 10mm; 
+        }
+        * { 
+            box-sizing: border-box; 
+        }
+        body { 
+            font-family: Arial, sans-serif; 
+            font-size: 10pt; 
+            margin: 0; 
+            line-height: 1.2;
+        }
+        h1 { 
+            text-align: center; 
+            margin: 0 0 8px 0; 
+            font-size: 16pt; 
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        .header-info {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+        .header-info p {
+            margin: 3px 0;
+            font-size: 10pt;
+        }
+        .notice-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .notice-box h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            table-layout: fixed; 
+            font-size: 9pt;
+            margin-bottom: 15px;
+        }
+        thead { 
+            display: table-header-group; 
+        }
+        tr { 
+            break-inside: avoid; 
+        }
+        th, td { 
+            border: 1px solid #000; 
+            padding: 4px; 
+            text-align: left; 
+            vertical-align: top; 
+            word-wrap: break-word; 
+        }
+        th { 
+            background: #ffecb3; 
+            text-align: center; 
+            font-weight: bold;
+            color: #bf360c;
+        }
+        .amount-col {
+            text-align: right;
+            font-family: "Courier New", monospace;
+        }
+        .total-row {
+            background: #fff3e0;
+            font-weight: bold;
+        }
+        .grand-total-row {
+            background: #ffe0b2;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+        .no-extra-items {
+            text-align: center;
+            padding: 30px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px dashed #4caf50;
+        }
+        .approval-section {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #90caf9;
+        }
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #dee2e6;
+        }
+        .signature-box {
+            text-align: center;
+            width: 45%;
+            border: 1px solid #ccc;
+            padding: 25px 10px;
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <h1>EXTRA ITEMS STATEMENT</h1>
+    <h3 style="text-align: center; color: #666; margin-bottom: 15px;">Additional Work Items Beyond Original Contract</h3>
+    
+    <div class="header-info">
+        <p><strong>Agreement No:</strong> {{ data.agreement_no }}</p>
+        <p><strong>Name of Work:</strong> {{ data.name_of_work }}</p>
+        <p><strong>Name of Firm:</strong> {{ data.name_of_firm }}</p>
+        <p><strong>Statement Date:</strong> {{ data.generation_date }}</p>
+    </div>
+
+    {% if data.has_extra_items and data.extra_items and data.extra_items|length > 0 %}
+    
+    <div class="notice-box">
+        <h3>⚠️ Important Notice</h3>
+        <p><strong>Extra Items Identified:</strong> {{ data.extra_items_count }} additional work items have been identified and executed beyond the original work order.</p>
+        <p><strong>Administrative Approval:</strong> All extra items must have proper administrative approval before execution and payment.</p>
+        <p><strong>Rate Justification:</strong> Rates for extra items should be justified as per prevailing market rates or approved schedule.</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 8%;">Item No.</th>
+                <th style="width: 35%;">Description of Extra Work</th>
+                <th style="width: 8%;">Unit</th>
+                <th style="width: 12%;">Quantity</th>
+                <th style="width: 12%;">Rate</th>
+                <th style="width: 15%;">Amount</th>
+                <th style="width: 10%;">Approval Ref.</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data.extra_items %}
+            <tr>
+                <td>{{ item.item_no or item.serial_no or 'E-' + loop.index|string }}</td>
+                <td>{{ item.description or '' }}</td>
+                <td>{{ item.unit or '' }}</td>
+                <td class="amount-col">{{ "%.2f"|format(item.quantity or 0) }}</td>
+                <td class="amount-col">{{ "%.2f"|format(item.rate or 0) }}</td>
+                <td class="amount-col">{{ "%.2f"|format(item.amount or 0) }}</td>
+                <td style="font-size: 8pt;">{{ item.approval_ref or '_______' }}</td>
+            </tr>
+            {% endfor %}
+            
+            <tr class="total-row">
+                <td colspan="5"><strong>Extra Items Total Rs.</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.extra_items_total or 0) }}</strong></td>
+                <td></td>
+            </tr>
+            
+            <tr class="total-row">
+                <td colspan="5"><strong>Tender Premium @ {{ "%.1f"|format((data.tender_premium_percent or 0.10) * 100) }}%</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.extra_premium or 0) }}</strong></td>
+                <td></td>
+            </tr>
+            
+            <tr class="grand-total-row">
+                <td colspan="5"><strong>EXTRA ITEMS GRAND TOTAL Rs.</strong></td>
+                <td class="amount-col"><strong>{{ "%.2f"|format(data.extra_items_sum or 0) }}</strong></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="approval-section">
+        <h4 style="margin-top: 0; color: #1565c0;">Administrative Approval Details</h4>
+        
+        <table style="font-size: 9pt;">
+            <tr>
+                <th style="width: 30%; background: #e3f2fd;">Approval Parameter</th>
+                <th style="width: 70%; background: #e3f2fd;">Details</th>
+            </tr>
+            <tr>
+                <td><strong>Total Extra Items Value:</strong></td>
+                <td class="amount-col"><strong>₹{{ "%.2f"|format(data.extra_items_sum or 0) }}</strong></td>
+            </tr>
+            <tr>
+                <td><strong>% of Original Contract:</strong></td>
+                <td class="amount-col">
+                    {% if data.bill_total and data.bill_total > 0 %}
+                        {{ "%.1f"|format((data.extra_items_sum or 0) / data.bill_total * 100) }}%
+                    {% else %}
+                        N/A
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Approving Authority Required:</strong></td>
+                <td>
+                    {% set extra_percent = (data.extra_items_sum or 0) / (data.bill_total or 1) * 100 %}
+                    {% if extra_percent > 25 %}
+                        Higher Authority (>25% of contract value)
+                    {% elif extra_percent > 10 %}
+                        Departmental Head (10-25% of contract value)
+                    {% else %}
+                        Executive Engineer (≤10% of contract value)
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Approval Status:</strong></td>
+                <td>
+                    <input type="checkbox" style="margin-right: 5px;"> Approved
+                    <input type="checkbox" style="margin: 0 5px 0 15px;"> Pending
+                    <input type="checkbox" style="margin: 0 5px 0 15px;"> Conditional
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="background: #fff3e0; padding: 15px; border-radius: 5px; margin: 15px 0; border: 1px solid #ffcc02;">
+        <h4 style="margin-top: 0; color: #e65100;">Justification for Extra Items</h4>
+        
+        <div style="margin: 10px 0;">
+            <input type="checkbox" style="margin-right: 8px;"> <strong>Site Conditions:</strong> Unforeseen site conditions necessitated additional work
+        </div>
+        <div style="margin: 10px 0;">
+            <input type="checkbox" style="margin-right: 8px;"> <strong>Design Changes:</strong> Engineering design modifications during execution
+        </div>
+        <div style="margin: 10px 0;">
+            <input type="checkbox" style="margin-right: 8px;"> <strong>Quality Enhancement:</strong> Additional work for quality improvement
+        </div>
+        <div style="margin: 10px 0;">
+            <input type="checkbox" style="margin-right: 8px;"> <strong>Client Request:</strong> Additional scope requested by client
+        </div>
+        <div style="margin: 10px 0;">
+            <input type="checkbox" style="margin-right: 8px;"> <strong>Regulatory Compliance:</strong> Work required for regulatory compliance
+        </div>
+        
+        <div style="margin-top: 15px;">
+            <strong>Detailed Justification:</strong><br>
+            <div style="border: 1px solid #ccc; height: 80px; margin-top: 5px; background: white; padding: 5px;">
+                <i style="color: #999;">Provide detailed justification for each extra item...</i>
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+    
+    <div class="no-extra-items">
+        <h2 style="margin-top: 0; color: #2e7d32;">✓ No Extra Items</h2>
+        <p style="font-size: 12pt; margin: 15px 0;">
+            <strong>Work Completed as per Original Contract</strong>
+        </p>
+        <p>All work has been executed strictly according to the original work order without any additional items.</p>
+        <p>This demonstrates excellent project planning and execution control.</p>
+        
+        <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.7); border-radius: 5px;">
+            <p style="margin: 0; font-weight: bold;">
+                Original Contract Value: ₹{{ "%.2f"|format(data.bill_grand_total or 0) }}
+            </p>
+            <p style="margin: 5px 0 0 0;">
+                Extra Items Value: ₹0.00 (0% variation)
+            </p>
+        </div>
+    </div>
+    
+    {% endif %}
+
+    <div class="signature-section">
+        <div class="signature-box">
+            <div style="height: 40px; border-bottom: 1px solid #999; margin-bottom: 8px;"></div>
+            <strong>Contractor</strong><br>
+            <small>{{ data.name_of_firm }}</small><br>
+            <small>Date: _______________</small>
+        </div>
+        
+        <div class="signature-box">
+            <div style="height: 40px; border-bottom: 1px solid #999; margin-bottom: 8px;"></div>
+            <strong>Engineer-in-Charge</strong><br>
+            <small>Name & Designation</small><br>
+            <small>Date: _______________</small>
+        </div>
+    </div>
+    
+    <div style="margin-top: 20px; text-align: center; font-size: 8pt; color: #666;">
+        Generated on {{ data.generation_date }} at {{ data.generation_time }}<br>
+        Infrastructure Billing System v2.0 - Extra Items Statement<br>
+        {% if data.has_extra_items %}
+        <strong style="color: #d32f2f;">Administrative approval required before payment</strong>
+        {% else %}
+        <strong style="color: #2e7d32;">No extra items - Contract executed as planned</strong>
+        {% endif %}
+    </div>
+</body>
+</html>

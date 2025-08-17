@@ -7,13 +7,12 @@ output documents in various formats (HTML, PDF, DOCX) using the specified
 templates and configurations.
 """
 
-import os
-import sys
 import logging
+import sys
 import traceback
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any
 from datetime import datetime
 
 # Configure logging
@@ -39,9 +38,8 @@ def process_single_file(
     generate_pdf: bool = True,
     generate_docx: bool = True
 ) -> Dict[str, Any]:
-    """
-    Process a single bill file and generate output documents.
-    
+    """Process a single bill file and generate output documents.
+
     Args:
         input_file: Path to the input Excel file
         output_dir: Base directory for output files
@@ -49,7 +47,7 @@ def process_single_file(
         generate_html: Whether to generate HTML output
         generate_pdf: Whether to generate PDF output
         generate_docx: Whether to generate DOCX output
-        
+
     Returns:
         Dictionary with processing results and metadata
     """

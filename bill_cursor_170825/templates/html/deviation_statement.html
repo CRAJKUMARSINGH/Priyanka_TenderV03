@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deviation Statement</title>
+    <style>
+        @page { 
+            size: A4; 
+            margin: 10mm; 
+        }
+        * { 
+            box-sizing: border-box; 
+        }
+        body { 
+            font-family: Arial, sans-serif; 
+            font-size: 10pt; 
+            margin: 0; 
+            line-height: 1.2;
+        }
+        h1 { 
+            text-align: center; 
+            margin: 0 0 8px 0; 
+            font-size: 16pt; 
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .header-info {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+        .header-info p {
+            margin: 3px 0;
+            font-size: 10pt;
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            table-layout: fixed; 
+            font-size: 9pt;
+            margin-bottom: 15px;
+        }
+        thead { 
+            display: table-header-group; 
+        }
+        tr { 
+            break-inside: avoid; 
+        }
+        th, td { 
+            border: 1px solid #000; 
+            padding: 4px; 
+            text-align: left; 
+            vertical-align: top; 
+            word-wrap: break-word; 
+        }
+        th { 
+            background: #e3f2fd; 
+            text-align: center; 
+            font-weight: bold;
+            color: #1565c0;
+        }
+        .amount-col {
+            text-align: right;
+        }
+        .positive-deviation {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        .negative-deviation {
+            background: #ffebee;
+            color: #c62828;
+        }
+        .total-row {
+            background: #f5f5f5;
+            font-weight: bold;
+        }
+        .summary-section {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ffb74d;
+        }
+        .no-deviations {
+            text-align: center;
+            padding: 20px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>DEVIATION STATEMENT</h1>
+    <h3 style="text-align: center; color: #666; margin-bottom: 15px;">Work Order vs Bill Quantity Analysis</h3>
+    
+    <div class="header-info">
+        <p><strong>Agreement No:</strong> {{ data.agreement_no }}</p>
+        <p><strong>Name of Work:</strong> {{ data.name_of_work }}</p>
+        <p><strong>Name of Firm:</strong> {{ data.name_of_firm }}</p>
+        <p><strong>Analysis Date:</strong> {{ data.generation_date }}</p>
+    </div>
+
+    {% if data.deviations and data.deviations|length > 0 %}
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 8%;">Item No.</th>
+                <th style="width: 25%;">Description</th>
+                <th style="width: 8%;">Unit</th>
+                <th style="width: 12%;">Work Order Qty</th>
+                <th style="width: 12%;">Bill Qty</th>
+                <th style="width: 12%;">Deviation Qty</th>
+                <th style="width: 10%;">Deviation %</th>
+                <th style="width: 13%;">Amount Difference</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for deviation in data.deviations %}
+            <tr class="{% if deviation.deviation_qty > 0 %}positive-deviation{% else %}negative-deviation{% endif %}">
+                <td>{{ deviation.item_no }}</td>
+                <td>{{ deviation.description }}</td>
+                <td>{{ deviation.unit }}</td>
+                <td class="amount-col">{{ "%.2f"|format(deviation.work_order_qty) }}</td>
+                <td class="amount-col">{{ "%.2f"|format(deviation.bill_qty) }}</td>
+                <td class="amount-col">
+                    {% if deviation.deviation_qty > 0 %}+{% endif %}{{ "%.2f"|format(deviation.deviation_qty) }}
+                </td>
+                <td class="amount-col">
+                    {% if deviation.deviation_percent > 0 %}+{% endif %}{{ "%.1f"|format(deviation.deviation_percent) }}%
+                </td>
+                <td class="amount-col">
+                    {% if deviation.amount_difference > 0 %}+{% endif %}{{ "%.2f"|format(deviation.amount_difference) }}
+                </td>
+            </tr>
+            {% endfor %}
+            
+            <tr class="total-row">
+                <td colspan="7"><strong>Total Deviation Amount:</strong></td>
+                <td class="amount-col">
+                    <strong>
+                        {% if data.total_deviation_amount > 0 %}+{% endif %}{{ "%.2f"|format(data.total_deviation_amount or 0) }}
+                    </strong>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="summary-section">
+        <h4 style="margin-top: 0; color: #ef6c00;">Deviation Analysis Summary</h4>
+        <p><strong>Total Items with Deviations:</strong> {{ data.deviations|length }}</p>
+        <p><strong>Net Deviation Amount:</strong> 
+            {% if data.total_deviation_amount > 0 %}
+                +₹{{ "%.2f"|format(data.total_deviation_amount) }} (Increase)
+            {% elif data.total_deviation_amount < 0 %}
+                -₹{{ "%.2f"|format(data.total_deviation_amount|abs) }} (Decrease)
+            {% else %}
+                ₹0.00 (No Net Change)
+            {% endif %}
+        </p>
+        
+        {% set positive_deviations = data.deviations|selectattr("deviation_qty", ">", 0)|list %}
+        {% set negative_deviations = data.deviations|selectattr("deviation_qty", "<", 0)|list %}
+        
+        <p><strong>Quantity Increases:</strong> {{ positive_deviations|length }} items</p>
+        <p><strong>Quantity Decreases:</strong> {{ negative_deviations|length }} items</p>
+        
+        <div style="margin-top: 10px; padding: 10px; background: #ffffff; border-radius: 3px;">
+            <small>
+                <strong>Note:</strong> Green rows indicate quantity increases from work order.
+                Red rows indicate quantity decreases from work order.
+                All deviations should be verified and approved by appropriate authorities.
+            </small>
+        </div>
+    </div>
+    
+    {% else %}
+    <div class="no-deviations">
+        <h3 style="margin-top: 0; color: #2e7d32;">✓ No Significant Deviations Found</h3>
+        <p>All bill quantities match the work order quantities within acceptable tolerance.</p>
+        <p>This indicates good project execution according to original specifications.</p>
+    </div>
+    {% endif %}
+    
+    <div style="margin-top: 20px; text-align: center; font-size: 8pt; color: #666;">
+        Generated on {{ data.generation_date }} at {{ data.generation_time }}<br>
+        Infrastructure Billing System v2.0 - Deviation Analysis Report
+    </div>
+</body>
+</html>

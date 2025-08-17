@@ -1,0 +1,212 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+% Page setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\textbf{Public Works Department, Government of Rajasthan}}
+\fancyfoot[C]{Page \thepage}
+\fancyfoot[R]{Deviation Analysis Report}
+
+% Custom commands
+\newcommand{\rupees}[1]{₹\,#1}
+
+% Colors for deviation analysis
+\definecolor{headerblue}{RGB}{25,118,210}
+\definecolor{positivegreen}{RGB}{76,175,80}
+\definecolor{negativered}{RGB}{244,67,54}
+\definecolor{lightgray}{RGB}{245,245,245}
+
+\begin{document}
+
+% Title section
+\begin{center}
+    {\Huge\textbf{\textcolor{headerblue}{DEVIATION STATEMENT}}}\\[0.8cm]
+    {\Large\textbf{Work Order vs Bill Quantity Analysis}}\\[0.5cm]
+    {\large Election Commission Compliant Format}\\[0.3cm]
+    \rule{\textwidth}{2pt}\\[1cm]
+\end{center}
+
+\begin{center}
+	\fbox{\begin{minipage}{0.9\textwidth}
+			\begin{tabular}{@{}ll@{}}
+				\textbf{Agreement No:} & \VAR{data.agreement_no if data.agreement_no is defined else (data.header[5][1] if data.header and data.header[5] and data.header[5][1] is defined else 'N/A')} \\[1ex]
+				\textbf{Name of Work:} & \parbox[t]{0.7\textwidth}{\VAR{data.name_of_work if data.name_of_work is defined else (data.header[1][1] if data.header and data.header[1] and data.header[1][1] is defined else 'N/A')}} \\[1ex]
+				\textbf{Name of Firm:} & \VAR{data.name_of_firm if data.name_of_firm is defined else (data.header[0][1] if data.header and data.header[0] and data.header[0][1] is defined else 'N/A')} \\[1ex]
+				\textbf{Analysis Date:} & \VAR{data.generation_date if data.generation_date is defined else (data.current_date if data.current_date is defined else 'Today')} \\[1ex]
+			\end{tabular}
+	\end{minipage}}
+\end{center}
+\vspace{1cm}
+
+% Deviation analysis table
+\BLOCK{if data.deviations and data.deviations|length > 0}
+\section*{Detailed Deviation Analysis}
+
+\begin{longtable}{|p{1cm}|p{4cm}|p{1cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.2cm}|p{2cm}|}
+\hline
+\rowcolor{lightgray}
+\textbf{Item} & \textbf{Description} & \textbf{Unit} & \textbf{WO Qty} & \textbf{Bill Qty} & \textbf{Dev. Qty} & \textbf{Dev. \%} & \textbf{Amount Diff.} \\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor{lightgray}
+\textbf{Item} & \textbf{Description} & \textbf{Unit} & \textbf{WO Qty} & \textbf{Bill Qty} & \textbf{Dev. Qty} & \textbf{Dev. \%} & \textbf{Amount Diff.} \\
+\hline
+\endhead
+
+\hline
+\multicolumn{8}{|r|}{\textit{Continued on next page}} \\
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+\BLOCK{for deviation in data.deviations}
+\BLOCK{if deviation.deviation_qty > 0}
+\rowcolor{green!20}
+\BLOCK{else}
+\rowcolor{red!20}
+\BLOCK{endif}
+\VAR{deviation.item_no} & 
+\parbox[t]{4cm}{\VAR{deviation.description}} & 
+\VAR{deviation.unit} & 
+\VAR{"%.2f"|format(deviation.work_order_qty)} & 
+\VAR{"%.2f"|format(deviation.bill_qty)} & 
+\BLOCK{if deviation.deviation_qty > 0}+\BLOCK{endif}\VAR{"%.2f"|format(deviation.deviation_qty)} & 
+\BLOCK{if deviation.deviation_percent > 0}+\BLOCK{endif}\VAR{"%.1f"|format(deviation.deviation_percent)}\% & 
+\BLOCK{if deviation.amount_difference > 0}+\BLOCK{endif}\rupees{\VAR{"%.2f"|format(deviation.amount_difference)}} \\
+\hline
+\BLOCK{endfor}
+
+% Total deviation row
+\rowcolor{lightgray}
+\multicolumn{7}{|r|}{\textbf{Total Net Deviation Amount:}} & 
+\BLOCK{if data.total_deviation_amount > 0}
+\textcolor{positivegreen}{\textbf{+\rupees{\VAR{"%.2f"|format(data.total_deviation_amount)}}}}
+\BLOCK{elif data.total_deviation_amount < 0}
+\textcolor{negativered}{\textbf{-\rupees{\VAR{"%.2f"|format(data.total_deviation_amount|abs)}}}}
+\BLOCK{else}
+\textbf{\rupees{0.00}}
+\BLOCK{endif} \\
+\hline
+
+\end{longtable}
+
+% Analysis summary
+\section*{Deviation Analysis Summary}
+
+\begin{center}
+\fbox{\begin{minipage}{0.8\textwidth}
+\begin{center}
+\textbf{DEVIATION STATISTICS}
+\end{center}
+
+\begin{tabular}{lr}
+Total Items with Deviations: & \textbf{\VAR{data.deviations|length}} \\[0.2cm]
+Net Deviation Amount: & 
+\BLOCK{if data.total_deviation_amount > 0}
+\textcolor{positivegreen}{\textbf{+\rupees{\VAR{"%.2f"|format(data.total_deviation_amount)}} (Increase)}}
+\BLOCK{elif data.total_deviation_amount < 0}
+\textcolor{negativered}{\textbf{-\rupees{\VAR{"%.2f"|format(data.total_deviation_amount|abs)}} (Decrease)}}
+\BLOCK{else}
+\textbf{\rupees{0.00} (No Net Change)}
+\BLOCK{endif} \\[0.2cm]
+
+\BLOCK{set positive_deviations = data.deviations|selectattr("deviation_qty", ">", 0)|list}
+\BLOCK{set negative_deviations = data.deviations|selectattr("deviation_qty", "<", 0)|list}
+Quantity Increases: & \textcolor{positivegreen}{\textbf{\VAR{positive_deviations|length} items}} \\[0.2cm]
+Quantity Decreases: & \textcolor{negativered}{\textbf{\VAR{negative_deviations|length} items}} \\[0.2cm]
+\end{tabular}
+\end{minipage}}
+\end{center}
+
+% Approval requirements
+\vspace{1cm}
+\section*{Administrative Requirements}
+
+\begin{center}
+\fbox{\begin{minipage}{0.9\textwidth}
+\textbf{Important Notes:}
+\begin{enumerate}
+\item \textcolor{positivegreen}{Green rows} indicate quantity increases from work order
+\item \textcolor{negativered}{Red rows} indicate quantity decreases from work order  
+\item All deviations must be verified and approved by competent authority
+\item Reasons for deviations should be documented and justified
+\item Approval from appropriate level is required before payment
+\end{enumerate}
+
+\textbf{Approval Matrix:}
+\begin{itemize}
+\item Deviations up to 10\%: Executive Engineer approval
+\item Deviations 10-25\%: Superintending Engineer approval  
+\item Deviations above 25\%: Chief Engineer approval
+\end{itemize}
+\end{minipage}}
+\end{center}
+
+\BLOCK{else}
+% No deviations found
+\vspace{2cm}
+\begin{center}
+\fbox{\begin{minipage}{0.7\textwidth}
+\begin{center}
+{\Large\textcolor{positivegreen}{\textbf{✓ NO SIGNIFICANT DEVIATIONS FOUND}}}\\[1cm]
+{\large\textbf{Work Executed as per Original Contract}}\\[0.5cm]
+\end{center}
+
+All bill quantities match the work order quantities within acceptable tolerance levels.
+
+This indicates excellent project execution according to original specifications and demonstrates good project management and planning.
+
+\vspace{0.5cm}
+\begin{center}
+\textbf{Contract Adherence: 100\%}
+\end{center}
+\end{minipage}}
+\end{center}
+\BLOCK{endif}
+
+% Certification section
+\vspace{2cm}
+\section*{Verification and Approval}
+
+\begin{tabular}{p{6cm}p{6cm}}
+\rule{5cm}{0.5pt} & \rule{5cm}{0.5pt} \\
+Junior Engineer / Assistant Engineer & Date \\
+Measurement and Verification & \\[1cm]
+
+\rule{5cm}{0.5pt} & \rule{5cm}{0.5pt} \\
+Executive Engineer & Date \\
+Technical Approval & \\[1cm]
+
+\BLOCK{if data.total_deviation_amount and (data.total_deviation_amount|abs) > 0}
+\rule{5cm}{0.5pt} & \rule{5cm}{0.5pt} \\
+Superintending Engineer / Chief Engineer & Date \\
+Administrative Approval for Deviations & \\
+\BLOCK{endif}
+\end{tabular}
+
+% Footer
+\vspace{2cm}
+\begin{center}
+\rule{\textwidth}{1pt}\\
+\small
+Generated on \VAR{data.generation_date} at \VAR{data.generation_time}\\
+Election Commission Compliant Format - Deviation Analysis Report\\
+\textbf{All deviations require proper justification and approval}
+\end{center}
+
+\end{document}

@@ -1,0 +1,248 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{tikz}
+
+% Page setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\textbf{Public Works Department, Government of Rajasthan}}
+\fancyfoot[C]{Page \thepage}
+\fancyfoot[R]{Bill Scrutiny Sheet}
+
+% Custom commands
+\newcommand{\rupees}[1]{₹\,#1}
+\newcommand{\checkbox}{\makebox[1em]{$\square$}}
+\newcommand{\checkedbox}{\makebox[1em]{$\boxtimes$}}
+
+% Colors
+\definecolor{headerblue}{RGB}{25,118,210}
+\definecolor{approvedgreen}{RGB}{76,175,80}
+\definecolor{lightgray}{RGB}{245,245,245}
+\definecolor{warningamber}{RGB}{255,193,7}
+
+\begin{document}
+
+% Title section
+\begin{center}
+    {\Huge\textbf{\textcolor{headerblue}{FINAL BILL SCRUTINY SHEET}}}\\[0.8cm]
+    {\Large\textbf{Bill Verification and Approval Document}}\\[0.5cm]
+    {\large Election Commission Compliant Format}\\[0.3cm]
+    \rule{\textwidth}{2pt}\\[1cm]
+\end{center}
+
+% Project information
+\begin{center}
+\fbox{\begin{minipage}{0.9\textwidth}
+\begin{tabular}{@{}ll@{}}
+\textbf{Agreement No:} & \VAR{data.agreement_no} \\[0.3cm]
+\textbf{Name of Work:} & \parbox[t]{10cm}{\VAR{data.name_of_work}} \\[0.3cm]
+\textbf{Name of Firm:} & \VAR{data.name_of_firm} \\[0.3cm]
+\textbf{Scrutiny Date:} & \VAR{data.scrutiny_date or data.generation_date} \\[0.3cm]
+\textbf{Scrutiny Officer:} & \rule{8cm}{0.5pt} \\[0.3cm]
+\end{tabular}
+\end{minipage}}
+\end{center}
+
+\vspace{1cm}
+
+% Financial Summary Section
+\section*{Financial Summary for Verification}
+
+\begin{longtable}{|p{8cm}|p{3cm}|p{2cm}|}
+\hline
+\rowcolor{approvedgreen!20}
+\textbf{Category} & \textbf{Amount (Rs.)} & \textbf{Verified} \\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor{approvedgreen!20}
+\textbf{Category} & \textbf{Amount (Rs.)} & \textbf{Verified} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+Main Work Items Total & \rupees{\VAR{"%.2f"|format(data.bill_total or 0)}} & \checkedbox \\
+\hline
+
+Tender Premium @ \VAR{"%.1f"|format((data.tender_premium_percent or 0.10) * 100)}\% & \rupees{\VAR{"%.2f"|format(data.bill_premium or 0)}} & \checkedbox \\
+\hline
+
+\rowcolor{lightgray}
+\textbf{Main Items Grand Total} & \textbf{\rupees{\VAR{"%.2f"|format(data.bill_grand_total or 0)}}} & \checkedbox \\
+\hline
+
+\BLOCK{if data.extra_items_total and data.extra_items_total > 0}
+Extra Items Total & \rupees{\VAR{"%.2f"|format(data.extra_items_total or 0)}} & \checkedbox \\
+\hline
+
+Extra Items Premium @ \VAR{"%.1f"|format((data.tender_premium_percent or 0.10) * 100)}\% & \rupees{\VAR{"%.2f"|format(data.extra_premium or 0)}} & \checkedbox \\
+\hline
+
+\rowcolor{lightgray}
+\textbf{Extra Items Grand Total} & \textbf{\rupees{\VAR{"%.2f"|format(data.extra_items_sum or 0)}}} & \checkedbox \\
+\hline
+\BLOCK{endif}
+
+\rowcolor{approvedgreen!30}
+\textbf{TOTAL PAYABLE AMOUNT} & \textbf{\rupees{\VAR{"%.2f"|format(data.total_amount or 0)}}} & \textcolor{approvedgreen}{\textbf{✓}} \\
+\hline
+
+\end{longtable}
+
+% Verification Checklist
+\vspace{1cm}
+\section*{Verification Checklist}
+
+\begin{center}
+\fbox{\begin{minipage}{0.9\textwidth}
+\textbf{\textcolor{warningamber}{MANDATORY VERIFICATION POINTS}}
+
+\vspace{0.5cm}
+\begin{enumerate}[leftmargin=1cm]
+\item \checkedbox \textbf{Work Order Compliance:} All items executed are as per approved work order
+
+\item \checkedbox \textbf{Quantity Verification:} Quantities have been physically verified and measured
+
+\item \checkedbox \textbf{Rate Verification:} Rates applied are as per approved schedule/tender
+
+\item \checkedbox \textbf{Quality Standards:} Work completed meets specified quality standards
+
+\item \checkedbox \textbf{Documentation:} All supporting documents and certifications are attached
+
+\BLOCK{if data.extra_items and data.extra_items|length > 0}
+\item \checkedbox \textbf{Extra Items Approval:} All extra items have proper administrative approval
+\BLOCK{endif}
+
+\item \checkedbox \textbf{Mathematical Accuracy:} All calculations have been verified and are correct
+
+\item \checkedbox \textbf{Statutory Compliance:} All statutory requirements have been met
+
+\item \checkedbox \textbf{Safety Compliance:} All safety norms and regulations followed
+
+\item \checkedbox \textbf{Environmental Clearance:} No environmental violations reported
+\end{enumerate}
+\end{minipage}}
+\end{center}
+
+% Final Recommendation Section
+\vspace{1cm}
+\section*{Final Recommendation}
+
+\begin{center}
+\fbox{\begin{minipage}{0.8\textwidth}
+\begin{center}
+\textbf{\textcolor{headerblue}{SCRUTINY OFFICER'S RECOMMENDATION}}
+\end{center}
+
+\vspace{0.5cm}
+\checkbox \textbf{APPROVED:} Bill is recommended for payment
+
+\vspace{0.3cm}
+\checkbox \textbf{CONDITIONAL:} Bill approved with conditions (specify below)
+
+\vspace{0.3cm}
+\checkbox \textbf{REJECTED:} Bill requires corrections (specify below)
+
+\vspace{1cm}
+\textbf{Remarks/Conditions:}\\
+\rule{\textwidth}{0.5pt}\\[0.3cm]
+\rule{\textwidth}{0.5pt}\\[0.3cm]
+\rule{\textwidth}{0.5pt}\\[0.3cm]
+\rule{\textwidth}{0.5pt}
+\end{minipage}}
+\end{center}
+
+% Payment Authorization
+\vspace{1cm}
+\section*{Payment Authorization}
+
+\begin{center}
+\fbox{\begin{minipage}{0.9\textwidth}
+\begin{center}
+\textbf{PAYMENT DETAILS}
+\end{center}
+
+\begin{tabular}{lr}
+Gross Amount: & \rupees{\VAR{"%.2f"|format(data.total_amount or 0)}} \\[0.2cm]
+Less: TDS (if applicable): & \rupees{\_\_\_\_\_\_\_\_\_\_} \\[0.2cm]
+Less: Retention (if applicable): & \rupees{\_\_\_\_\_\_\_\_\_\_} \\[0.2cm]
+Less: Previous payments: & \rupees{\_\_\_\_\_\_\_\_\_\_} \\[0.2cm]
+\hline
+\textbf{Net Amount Payable:} & \textbf{\rupees{\_\_\_\_\_\_\_\_\_\_}} \\
+\end{tabular}
+\end{minipage}}
+\end{center}
+
+% Signature Section
+\vspace{2cm}
+\section*{Approvals and Signatures}
+
+\begin{center}
+\begin{tabular}{p{6cm}p{6cm}}
+\rule{5cm}{0.5pt} & \rule{5cm}{0.5pt} \\
+\textbf{Scrutinizing Officer} & \textbf{Date} \\
+Name \& Designation & \\
+\rule{5cm}{0.5pt} & \\
+Signature & \\[1.5cm]
+
+\rule{5cm}{0.5pt} & \rule{5cm}{0.5pt} \\
+\textbf{Executive Engineer} & \textbf{Date} \\
+Technical Approval & \\
+\rule{5cm}{0.5pt} & \\
+Signature & \\[1.5cm]
+
+\rule{5cm}{0.5pt} & \rule{5cm}{0.5pt} \\
+\textbf{Superintending Engineer} & \textbf{Date} \\
+Administrative Approval & \\
+\rule{5cm}{0.5pt} & \\
+Signature & \\
+\end{tabular}
+\end{center}
+
+% Official Seal Section
+\vspace{2cm}
+\begin{center}
+\fbox{\begin{minipage}{0.4\textwidth}
+\begin{center}
+\textbf{OFFICIAL SEAL}
+
+\vspace{1cm}
+\begin{tikzpicture}
+\draw[thick] (0,0) circle (2cm);
+\node at (0,0.5) {\textbf{PWD}};
+\node at (0,0) {\textbf{RAJASTHAN}};
+\node at (0,-0.5) {\textbf{SEAL}};
+\end{tikzpicture}
+\vspace{1cm}
+\end{center}
+\end{minipage}}
+\end{center}
+
+% Footer
+\vspace{1cm}
+\begin{center}
+\rule{\textwidth}{1pt}\\
+\small
+Generated on \VAR{data.generation_date} at \VAR{data.generation_time}\\
+Election Commission Compliant Format - Bill Scrutiny Sheet\\
+\textbf{This document requires manual verification and approval}
+\end{center}
+
+\end{document}

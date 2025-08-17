@@ -1,0 +1,260 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{rotating}
+
+% Page setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\textbf{Public Works Department, Government of Rajasthan}}
+\fancyfoot[C]{Page \thepage}
+\fancyfoot[R]{Certificate III - Final Acceptance}
+
+% Custom commands
+\newcommand{\rupees}[1]{₹\,#1}
+\newcommand{\checkbox}{\makebox[1em]{$\boxtimes$}}
+
+% Colors
+\definecolor{finalgreen}{RGB}{76,175,80}
+\definecolor{certgold}{RGB}{255,193,7}
+\definecolor{lightgray}{RGB}{245,245,245}
+\definecolor{darkgreen}{RGB}{46,125,50}
+
+\begin{document}
+
+% Header with Certificate Title and Acceptance Stamp
+\begin{center}
+\colorbox{finalgreen}{\begin{minipage}{\textwidth}
+\begin{center}
+\textcolor{white}{
+    {\Huge\textbf{CERTIFICATE III}}\\[0.5cm]
+    {\Large\textbf{Final Acceptance and Payment Authorization Certificate}}\\[0.3cm]
+    {\large Public Works Department, Government of Rajasthan}
+}
+\end{center}
+\end{minipage}}
+
+\vspace{0.5cm}
+\begin{turn}{-15}
+\colorbox{finalgreen}{\textcolor{white}{\textbf{\Large ACCEPTED}}}
+\end{turn}
+\end{center}
+
+\vspace{1cm}
+
+% Certificate Body with Border
+\begin{center}
+\fbox{\begin{minipage}{0.95\textwidth}
+\vspace{0.5cm}
+
+% Project Information
+\begin{center}
+\colorbox{lightgray}{\begin{minipage}{0.9\textwidth}
+\begin{center}
+\textbf{PROJECT INFORMATION}
+\end{center}
+\vspace{0.3cm}
+\begin{tabular}{@{}ll@{}}
+\textbf{Agreement No:} & Agreement No. 48/2024-25 \\[0.2cm]
+\textbf{Name of Work:} & \parbox[t]{9cm}{Name of Work ;- Electric Repair and MTC work at Govt. Ambedkar hostel Ambamata, Govardhanvilas, Udaipur} \\[0.2cm]
+\textbf{Name of Firm/Contractor:} &  \\[0.2cm]
+\textbf{Contract Date:} &  \\[0.2cm]
+\textbf{Completion Date:} & Date of actual completion of work : 2025-06-28 00:00:00 \\[0.2cm]
+\textbf{Final Acceptance Date:} &  \\[0.2cm]
+\end{tabular}
+\end{minipage}}
+\end{center}
+
+\vspace{1cm}
+
+% Acceptance Declaration
+\section*{FINAL ACCEPTANCE DECLARATION}
+
+\begin{center}
+\textbf{\Large I hereby certify and declare that:}
+\end{center}
+
+\vspace{0.5cm}
+
+The work described above has been \textbf{completed in all respects} and has been \textbf{accepted by the department} after thorough inspection and verification. The completed work is fully functional, meets all specified requirements, and is ready for immediate use and operation.
+
+\vspace{0.5cm}
+
+All \textbf{technical specifications, quality standards, and safety requirements} have been met satisfactorily. The contractor has fulfilled all contractual obligations including submission of required documentation, test certificates, operation manuals, and warranty undertakings.
+
+\vspace{0.5cm}
+
+The work has been executed within the approved specifications and the final cost is \textbf{justified and reasonable}. All quantities have been verified through proper measurement and the rates applied are as per approved schedule.
+
+\vspace{0.5cm}
+
+The contractor is hereby \textbf{authorized for final payment} as detailed in the financial summary below, subject to standard deductions and retentions as per contract terms.
+
+% Final Payment Authorization Summary
+\vspace{1cm}
+\section*{Final Payment Authorization Summary}
+
+\begin{center}
+\begin{longtable}{|p{8cm}|p{3cm}|p{2.5cm}|}
+\hline
+\rowcolor{finalgreen!20}
+\textbf{Payment Category} & \textbf{Amount (Rs.)} & \textbf{Status} \\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor{finalgreen!20}
+\textbf{Payment Category} & \textbf{Amount (Rs.)} & \textbf{Status} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+Main Work Items (Including Premium) & \rupees{101104.30} & \textcolor{finalgreen}{\textbf{✓ Approved}} \\
+\hline
+\rowcolor{lightgray}
+\textbf{Gross Amount Payable} & \textbf{\rupees{101104.30}} & \textcolor{finalgreen}{\textbf{✓ Verified}} \\
+\hline
+Less: Previous Payments (if any) & \rupees{0.00} & \textcolor{gray}{N/A} \\
+\hline
+Less: Retention Money (if applicable) & \rupees{5055.22} & \textcolor{orange}{\textbf{Retained}} \\
+\hline
+\rowcolor{finalgreen!30}
+\textbf{NET AMOUNT AUTHORIZED FOR PAYMENT} & \textbf{\rupees{96049.08}} & \textcolor{finalgreen}{\textbf{✓ FINAL}} \\
+\hline
+\end{longtable}
+\end{center}
+
+% Final Compliance Verification
+\vspace{1cm}
+\section*{Final Compliance Verification}
+
+\begin{center}
+\colorbox{lightgray!50}{\begin{minipage}{0.9\textwidth}
+\textbf{\textcolor{darkgreen}{COMPLIANCE VERIFICATION COMPLETED}}
+
+\vspace{0.5cm}
+\begin{enumerate}[leftmargin=1cm]
+\item \checkbox \textbf{Work Completion:} All work items completed as per approved drawings and specifications
+
+\item \checkbox \textbf{Quality Assurance:} Quality control tests completed with satisfactory results
+
+\item \checkbox \textbf{Safety Compliance:} All safety regulations and protocols have been followed
+
+\item \checkbox \textbf{Environmental Clearance:} No environmental violations and proper waste disposal
+
+\item \checkbox \textbf{Documentation:} All required certificates, test reports, and manuals submitted
+
+\item \checkbox \textbf{Statutory Compliance:} All statutory requirements and clearances obtained
+
+\item \checkbox \textbf{Financial Verification:} All bills, vouchers, and financial documents verified
+\end{enumerate}
+\end{minipage}}
+\end{center}
+
+% Post-Completion Obligations
+\vspace{1cm}
+\section*{Post-Completion Obligations}
+
+\begin{center}
+\colorbox{certgold!20}{\begin{minipage}{0.9\textwidth}
+\begin{center}
+\textbf{\textcolor{darkgreen}{WARRANTY AND MAINTENANCE}}
+\end{center}
+
+\vspace{0.3cm}
+\textbf{Warranty Period:} 12 months from the date of completion (or as per contract terms)
+
+\textbf{Maintenance Responsibility:} Contractor shall maintain the work during warranty period
+
+\textbf{Defect Liability:} Contractor liable to rectify any defects appearing during warranty period
+
+\textbf{Performance Bond:} Valid until warranty period completion
+
+\vspace{0.3cm}
+\small\textbf{Note:} Retention money will be released after successful completion of warranty period and rectification of any defects, if found.
+\end{minipage}}
+\end{center}
+
+% Final Declaration
+\vspace{1cm}
+\begin{center}
+\colorbox{finalgreen!30}{\begin{minipage}{0.8\textwidth}
+\begin{center}
+\textbf{\Large\textcolor{darkgreen}{FINAL DECLARATION}}
+
+\vspace{0.5cm}
+\textbf{\large This work is hereby ACCEPTED and the contractor is AUTHORIZED for final payment.}
+
+\vspace{0.3cm}
+\textcolor{darkgreen}{Subject to standard terms and conditions of the contract and department policies.}
+\end{center}
+\end{minipage}}
+\end{center}
+
+\vspace{1cm}
+\end{minipage}}
+\end{center}
+
+% Signatures Section
+\vspace{1.5cm}
+\section*{Final Approvals and Signatures}
+
+\begin{center}
+\begin{tabular}{p{7cm}p{7cm}}
+\rule{6cm}{0.5pt} & \rule{6cm}{0.5pt} \\
+\textbf{Superintending Engineer} & \textbf{Chief Engineer / Add. Chief Engineer} \\
+Name: \rule{5cm}{0.5pt} & Name: \rule{5cm}{0.5pt} \\
+Date: \rule{5cm}{0.5pt} & Date: \rule{5cm}{0.5pt} \\
+Circle: \rule{5cm}{0.5pt} & Department: \rule{4cm}{0.5pt} \\
+\end{tabular}
+\end{center}
+
+% Departmental Approval Seal
+\vspace{2cm}
+\begin{center}
+\fbox{\begin{minipage}{0.5\textwidth}
+\begin{center}
+\textbf{\textcolor{finalgreen}{DEPARTMENTAL APPROVAL SEAL}}
+
+\vspace{1cm}
+\begin{tikzpicture}
+\draw[line width=4pt, color=finalgreen] (0,0) circle (3cm);
+\draw[line width=1pt, color=finalgreen] (0,0) circle (2.3cm);
+\node[align=center] at (0,0.8) {\textbf{\Large PWD}};
+\node[align=center] at (0,0.2) {\textbf{\large RAJASTHAN}};
+\node[align=center] at (0,-0.4) {\textbf{FINAL APPROVAL}};
+\end{tikzpicture}
+\vspace{1cm}
+
+\small\textcolor{gray}{This certificate authorizes final payment\\and confirms departmental acceptance}
+\end{center}
+\end{minipage}}
+\end{center}
+
+% Footer
+\vspace{1cm}
+\begin{center}
+\rule{\textwidth}{1pt}\\
+\small
+Generated on  at \\
+Election Commission Compliant Format - Final Acceptance Certificate\\
+\textcolor{finalgreen}{\textbf{Work accepted and authorized for final payment}}
+\end{center}
+
+\end{document}

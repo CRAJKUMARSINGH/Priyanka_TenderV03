@@ -2,13 +2,9 @@ import os
 import tempfile
 import logging
 from datetime import datetime
-import pandas as pd
-from jinja2 import Template, Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader
 import pdfkit
 import subprocess
-from docx import Document
-from docx.shared import Inches
-from docx.enum.text import WD_ALIGN_PARAGRAPH
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import threading
 from queue import Queue
@@ -169,20 +165,27 @@ class DocumentGeneratorV04:
                     if 'deviation_items' in data and data['deviation_items']:
                         template_data['items'] = data['deviation_items']
                     else:
-                        template_data['items'] = self._convert_bill_items_to_deviation(data.get('items', []))
+                        template_data['items'] = self._convert_bill_items_to_deviation(
+                            data.get('items', [])
+                        )
                 
                 # For extra_items template, use extra_items data
                 elif doc_type == 'extra_items':
                     template_data['items'] = data.get('extra_items', [])
                 
                 # Render with data
-                html_content = template.render(
-                    data=template_data,
-                    reverse_font=reverse_font,
-                    generation_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                    items=template_data.get('items', []),
-                    **{k: v for k, v in template_data.items() if k not in ['data', 'reverse_font', 'generation_date', 'items']}
-                )
+                render_args = {
+                    'data': template_data,
+                    'reverse_font': reverse_font,
+                    'generation_date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                    'items': template_data.get('items', [])
+                }
+                # Add additional template data, avoiding duplicates
+                for k, v in template_data.items():
+                    if k not in ['data', 'reverse_font', 'generation_date', 'items']:
+                        render_args[k] = v
+                        
+                html_content = template.render(**render_args)
                 
                 # Save HTML file
                 output_path = os.path.join(self.output_dir, f'{doc_type}.html')
@@ -578,7 +581,7 @@ This certifies that all work has been completed satisfactorily, quality complian
         total = 0.0
         
         # Calculate from bill summary
-        if 'bill_summary' in data and isinstance(data['bill_summary'], pd.DataFrame):
+        if 'bill_summary' in data and hasattr(data['bill_summary'], 'sum'):
             df = data['bill_summary']
             # Look for amount columns
             amount_cols = [col for col in df.columns if 'amount' in str(col).lower()]

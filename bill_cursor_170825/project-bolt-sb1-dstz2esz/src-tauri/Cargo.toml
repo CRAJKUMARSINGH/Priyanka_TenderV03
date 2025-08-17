@@ -1,0 +1,31 @@
+[package]
+name = "bill-generator"
+version = "0.1.0"
+description = "A Tauri-based Bill Generator Application"
+authors = ["You"]
+license = ""
+repository = ""
+edition = "2021"
+rust-version = "1.77.2"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.0.0-beta.15", features = [] }
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tauri = { version = "2.0.0-beta.15", features = ["dialog-all", "fs-all", "path-all"] }
+tauri-plugin-fs = "2.0.0-beta.5"
+tauri-plugin-dialog = "2.0.0-beta.5"
+log = "0.4"
+rfd = "0.12"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
